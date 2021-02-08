@@ -1,0 +1,86 @@
+
+.weather {
+  display: grid;
+  grid-template-areas:
+  'localization localization'
+  'notification notification'
+  'todayIcon todayTemperature'
+  'nextDays nextDays';
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 0.7fr 3fr 3fr;
+}
+
+.local { 
+  grid-area: localization;
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+  font-size: 40px;
+}  
+
+.notification {
+ grid-area: notification;
+ position: absolute;
+ justify-self: center;
+ align-self: center;
+ font-size: 20px;
+ width: 300px;
+ height: 25px;
+}
+
+.todayIcon {
+  grid-area: todayIcon;
+  display: grid;
+  justify-content: end;
+  align-items: center;
+}
+
+.todayIcon img {
+  width: 200px;
+}
+
+.todayTemperature {
+  grid-area: todayTemperature;
+  display: grid;
+  padding-right: 8px;
+}
+
+.todayTemperature p {
+  font-size: 47px;
+  align-self: end;
+  justify-self: center;
+  margin-bottom: 5px;
+}
+
+.todayTemperature h3 {
+  align-self: start;
+  justify-self: center;
+  font-size: 17px;
+  margin-left: 5px;
+}
+
+.nextDays {
+  grid-area: nextDays;
+  display: flex;
+  font-size: 12px;
+  flex-wrap: wrap;
+  min-width: 20px;
+  justify-content: space-evenly;
+}
+
+.nextDays p {
+  padding-left: 6px;
+}
+
+.nextDays .min span {
+  padding-left: 3px;
+}
+
+
+
+
+
+
+
+

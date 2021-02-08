@@ -1,68 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #ffffff;
-    color: #000000;
-    font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff;
+  color: #ffffff;
+  font-size: 20px;
 }
 
 /* GRID CONTAINER */
 
 .container {
-    display: grid;
-    gap: 5px;
-    height: 100vh;
-    width: 100vw;
-    grid-template-areas: 
-    'header header header header'
-    'main main main aside'
-    'main main main aside'
-    'footer footer footer footer';
-    
-    grid-template-columns: 1fr 1fr 1fr 1.3fr;
-    grid-template-rows: 1.3fr 1.5fr 1.5fr 1.2fr;
+  display: grid;
+  position: relative;
+  gap: 5px;
+  height: 100vh;
+  width: 100vw;
+  grid-template-areas: 
+  'header header header header'
+  'main main main aside'
+  'main main main aside'
+  'footer footer footer footer';
+  
+  grid-template-columns: 1fr 1fr 1fr 1.3fr;
+  grid-template-rows: 1.3fr 1.5fr 1.5fr 1.2fr;
 }
 
 /* GRID ITEMS */
 
 .grid-item {
-    display: grid;
-    align-items: center;
-    justify-content: center;
+  background: url(../assets/background/background.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /* HEADER */
 
 header {
-    position: relative;
-    grid-area: header;
-    background-color: #6b8e23;
+  position: relative;
+  grid-area: header;
+  
 }
 
 /* SECTION */
 
 section {
-    grid-area: main;
-    background-color: #00ffff;
+  position: relative;
+  grid-area: main;
+  
 }
 
 /* ASIDE */
 
 aside {
-    grid-area: aside;
-    background-color: #daa520
+  position: relative;
+  grid-area: aside;
+  
 }
 
 /* FOOTER */
 
 footer {
-    grid-area: footer;
-    background-color:#808080;   
+  position: relative;
+  grid-area: footer;
+  
 }
