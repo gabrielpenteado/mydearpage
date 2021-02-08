@@ -1,5 +1,5 @@
-// API KEY : 197ad8e2bbbe2806e90303bb987dc059
-const apiKey = "197ad8e2bbbe2806e90303bb987dc059";
+import { apiKey } from '../js/apiKey.js'
+console.log(apiKey);
 
 // SELECT ELEMENTS
 const local = document.querySelector('.local');
