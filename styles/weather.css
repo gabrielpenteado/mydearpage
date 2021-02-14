@@ -1,9 +1,10 @@
 
+/* 1920 x 1080 */
 .weather {
   display: grid;
   grid-template-areas:
   'localization localization'
-  'notification notification'
+  'submitcityname submitcityname'
   'todayIcon todayTemperature'
   'nextDays nextDays';
 
@@ -19,38 +20,51 @@
   font-size: 40px;
 }  
 
+.submitCityName {
+  grid-area: submitcityname;
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+}
+
 .notification {
- grid-area: notification;
- position: absolute;
- justify-self: center;
- align-self: center;
  font-size: 20px;
- width: 300px;
+ width: 290px;
  height: 25px;
+}
+
+.submitButton {
+  font-size: 16px;
+  padding: 3px;
+  padding-right: 6px;
+  border-radius: 8px;
+  background-color: rgb(0, 128, 0);
+  color: white;
 }
 
 .todayIcon {
   grid-area: todayIcon;
   display: grid;
-  justify-content: end;
   align-items: center;
 }
 
 .todayIcon img {
   width: 200px;
+  justify-self: end;
+  margin-left: 45px;
 }
 
 .todayTemperature {
   grid-area: todayTemperature;
   display: grid;
-  padding-right: 8px;
+  padding-right: 70px;
 }
 
 .todayTemperature p {
   font-size: 47px;
   align-self: end;
   justify-self: center;
-  margin-bottom: 5px;
+  row-gap: 10px;
 }
 
 .todayTemperature h3 {
@@ -66,6 +80,9 @@
   font-size: 12px;
   flex-wrap: wrap;
   min-width: 20px;
+  /* justify-content: flex-start;
+  margin-left: 30px;
+  padding: 8px; */
   justify-content: space-evenly;
 }
 

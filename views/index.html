@@ -19,7 +19,7 @@
 
     <!-- HEADER - ICONS -->
 
-    <header class="grid-item header">
+    <header class="grid-item">
       <nav>
         <ul class="links">
           <li><a href="https://www.google.com"><i class="fab fa-google"></i></i></a></li>
@@ -34,6 +34,14 @@
           <li><a href="https://www.twitch.tv"><i class="fab fa-twitch"></i></a></li>
           <li><a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a></li>
           <li><a href="https://www.wikipedia.org"><i class="fab fa-wikipedia-w"></i></a></li>
+          <li><a href="https://www.google.com/intl/pt/gmail/about/#"><i class="gmail"></i></a></li>
+          <li><a href="https://outlook.live.com/owa/"><i class="outlook"></i></a></li>
+          <li><a href="https://reddit.com"><i class="fab fa-reddit-alien"></i></a></li>
+          <li><a href="https://tiktok.com"><i class="fab fa-tiktok"></i></a></li>
+          <li><a href="https://github.com"><i class="fab fa-github"></i></a></li>
+          <li><a href="https://pinterest.com"><i class="fab fa-pinterest-p"></i></a></li>
+          <li><a href="https://aliexpress.com"><i class="aliexpress"></i></a></li>
+          <li><a href="https://spotify.com"><i class="fab fa-spotify"></i></a></li>
         </ul>
       </nav>
     </header>
@@ -47,8 +55,11 @@
     <!-- ASIDE - WEATHER -->
 
     <aside class="grid-item weather">
-      <h1 class="local">Local</h1>
-      <input type="text" class="notification" placeholder="Please, type your city name here.">
+      <h1 class="local"></h1>
+      <div class="submitCityName">
+        <input type="text" class="notification" placeholder="cityname,countrycode">
+        <button class="submitButton" type="button">Submit</button>
+      </div>
       <div class="todayIcon">
         <img src="../assets/weather-icons/unknown.svg" alt="todayicon" height="100px">
       </div>
