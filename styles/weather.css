@@ -14,32 +14,57 @@
 
 .local { 
   grid-area: localization;
-  position: absolute;
+  position: relative;
   justify-self: center;
   align-self: center;
-  font-size: 40px;
+  font-size: 37px;
 }  
 
 .submitCityName {
   grid-area: submitcityname;
-  position: absolute;
-  justify-self: center;
+  position: relative;
   align-self: center;
+  justify-self: center;
+}
+
+.submitCityName .fa-search {
+  position: relative;
+  font-size: 22px;
+  right: 30px;
+  top: 3px;
+  border-left: 1px solid #ffffff;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+input::placeholder {
+  color: #ffffff;
+  font-size: 16px ;
 }
 
 .notification {
- font-size: 20px;
- width: 290px;
- height: 25px;
+  position: relative;
+  background: transparent;
+  color: #ffffff;
+  padding: 15px;
+  font-size: 16px;
+  width: 300px;
+  height: 35px;
+  border-radius: 8px;
+  outline: none;
+  backdrop-filter: blur(10px);
+  left: 22px;
 }
 
 .submitButton {
   font-size: 16px;
-  padding: 3px;
+  padding: 2px;
   padding-right: 6px;
   border-radius: 8px;
   background-color: rgb(0, 128, 0);
   color: white;
+  margin-top: 2px;
 }
 
 .todayIcon {
@@ -60,6 +85,10 @@
   padding-right: 70px;
 }
 
+.todayTemperature .today {
+  font-size: 20px;
+}
+
 .todayTemperature p {
   font-size: 47px;
   align-self: end;
@@ -76,23 +105,33 @@
 
 .nextDays {
   grid-area: nextDays;
+  font-size: 14px;
   display: flex;
-  font-size: 12px;
-  flex-wrap: wrap;
-  min-width: 20px;
-  /* justify-content: flex-start;
-  margin-left: 30px;
-  padding: 8px; */
   justify-content: space-evenly;
 }
 
-.nextDays p {
-  padding-left: 6px;
+.nextDays .dayOfWeek {
+  display: flex;
+  justify-content: center;
 }
 
-.nextDays .min span {
-  padding-left: 3px;
+.nextDays .maxmin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.nextDays .fa-arrows-alt-v {
+  font-size: 16px;
+  transform: scale(1, 2);
+  
+}
+ 
+.nextDays .maxmin p {
+  padding: 2px;
+  padding-left: 8px;
+}
+
 
 
 

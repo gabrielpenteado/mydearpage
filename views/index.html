@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../styles/home.css">
   <link rel="stylesheet" href="../styles/icons.css">
   <link rel="stylesheet" href="../styles/weather.css">
+  <link rel="stylesheet" href="../styles/dateclock.css">
   <title>MyDearPage</title>
 </head>
 
@@ -42,6 +43,9 @@
           <li><a href="https://pinterest.com"><i class="fab fa-pinterest-p"></i></a></li>
           <li><a href="https://aliexpress.com"><i class="aliexpress"></i></a></li>
           <li><a href="https://spotify.com"><i class="fab fa-spotify"></i></a></li>
+          <li><a href="https://stackoverflow.com"><i class="fab fa-stack-overflow"></i></a></li>
+          <li><a href="https://bing.com"><i class="bing"></i></a></li>
+
         </ul>
       </nav>
     </header>
@@ -57,14 +61,15 @@
     <aside class="grid-item weather">
       <h1 class="local"></h1>
       <div class="submitCityName">
-        <input type="text" class="notification" placeholder="cityname,countrycode">
-        <button class="submitButton" type="button">Submit</button>
+        <input type="text" class="notification" placeholder="e.g. Toronto,CA">
+        <!-- <button class="submitButton" type="button">Submit</button> -->
+        <i class="fa fa-search" aria-hidden="true"></i>
       </div>
       <div class="todayIcon">
         <img src="../assets/weather-icons/unknown.svg" alt="todayicon" height="100px">
       </div>
       <div class="todayTemperature">
-        <p> <span></span>°C</p>
+        <p><span></span>°C</p>
         <h3> <span></span>% humidity</h3>
       </div>
       <div class="nextDays">
@@ -75,11 +80,19 @@
   <!-- FOOTER -->
 
     <footer class="grid-item footer">
-      footer
+      <div class="time">
+        <div class="date">
+          mounth, day, year
+        </div>
+        <div class="clock">
+          00:00:00 AM
+        </div>
+      </div>
     </footer>
 
   </div>
 
+  <script type="module" src="../js/dateclock.js"></script>
   <script type="module" src="../js/weather.js"></script>
 </body>
 

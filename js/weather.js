@@ -1,5 +1,5 @@
 import { apiKey } from '../js/apiKey.js'
-// console.log(apiKey);
+import { dateClock } from '../js/dateclock.js'
 
 // SELECT ELEMENTS
 const local = document.querySelector('.local');
@@ -8,7 +8,7 @@ const todayIcon = document.querySelector('.todayIcon');
 const todayDegree = document.querySelector('.todayTemperature p span');
 const todayInformations = document.querySelector('.todayTemperature h3 span');
 const nextDays = document.querySelector('.nextDays');
-const submit = document.querySelector('.submitButton');
+const submit = document.querySelector('.fa-search');
 
 
 // CHECK IF BROWSER SUPPORT GEOLOCATION AND GET IT WHEN PAGE LOADS,
@@ -19,6 +19,8 @@ window.addEventListener('load', () => {
   }
 })
 
+// DAYS OF WEEK ARRAY
+const weekDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 // FUNCTION SHOW WEATHER
 const showWeather = () => {
@@ -72,17 +74,24 @@ const showWeather = () => {
         // console.log(data2);
 
         const daily = data2.daily;
+        
         // GET MAX AND MIN TEMP FROM EACH DAY
         const arrMaxMin = daily.map((item, index) => `
-          <div class="day${[index]}">
+          <div>
+            <p class="dayOfWeek">${weekDay[new Date(item.dt*1000).getDay()]}</p>
             <div class="nextDayIcon${index}">
               <img src="../assets/weather-icons/${item.weather[0].icon}.svg"
               alt="nextdaysicons">
             </div>
-            <p class="max">Max <span>${Math.round(item.temp.max)}°C</span></p>
-            <p class="min">Min <span>${Math.round(item.temp.min)}°C</span></p>
+            <div class="maxmin">
+              <i class="fas fa-arrows-alt-v"></i>
+              <div>
+                <p class="max"><span>${Math.round(item.temp.max)}°C</span></p>
+                <p class="min"><span>${Math.round(item.temp.min)}°C</span></p>
+              </div>
+            </div> 
           </div>
-        `).slice(0, 6).join('');
+        `).slice(1, 7).join('');
         // console.log(arrMaxMin)
 
         //DISPLAY WEATHER OF NEXT DAYS
@@ -144,17 +153,24 @@ const showWeather = () => {
             // console.log(data4);
 
             const daily2 = data4.daily;
+
             // GET MAX AND MIN TEMP FROM EACH DAY TYPING CITY NAME
             const arrMaxMin2 = daily2.map((item, index) => `
-          <div class="day${[index]}">
-            <div class="nextDayIcon${index}">
-              <img src="../assets/weather-icons/${item.weather[0].icon}.svg"
-              alt="nextdaysicons">
+            <div class="day${[index]}">
+              <p class="dayOfWeek">${weekDay[new Date(item.dt*1000).getDay()]}</p>
+              <div class="nextDayIcon${index}">
+                <img src="../assets/weather-icons/${item.weather[0].icon}.svg"
+                alt="nextdaysicons">
+              </div>
+              <div class="maxmin">
+                <i class="fas fa-arrows-alt-v"></i>
+                <div>
+                  <p class="max"><span>${Math.round(item.temp.max)}°C</span></p>
+                  <p class="min"><span>${Math.round(item.temp.min)}°C</span></p>
+                </div>
+              </div> 
             </div>
-            <p class="max">Max <span>${Math.round(item.temp.max)}°C</span></p>
-            <p class="min">Min <span>${Math.round(item.temp.min)}°C</span></p>
-          </div>
-          `).slice(0, 6).join('');
+            `).slice(1, 7).join('');
             // console.log(arrMaxMin2)
 
             //DISPLAY WEATHER OF NEXT DAYS TYPING CITY NAME
@@ -180,7 +196,7 @@ const showWeather = () => {
 //DISPLAY ERROR
 const displayError = () => {
   // SHOW ALERT
-  alert("Write (cityname or cityname,countryabbreviation or only) to show weather. Remove parentheses and don't forget of the comma between cityname,countryabbreviation.");
+  alert("Please, use input field to write your city name and get weather info.");
   // REPEAT FUNCTION SHOW WEATHER TYPING CITY NAME
   submit.addEventListener('click', () => {
     const cityNamecountryCode1 = notification.value;
@@ -192,7 +208,7 @@ const displayError = () => {
       try {
         const response5 = await fetch(api5);
         const data5 = await response5.json();
-        console.log(data5);
+        // console.log(data5);
 
         const { temp, humidity } = data5.main;
         const { icon } = data5.weather[0];
@@ -226,17 +242,24 @@ const displayError = () => {
             // console.log(data6);
 
             const daily3 = data6.daily;
+
             // GET MAX AND MIN TEMP FROM EACH DAY TYPING CITY NAME
             const arrMaxMin3 = daily3.map((item, index) => `
             <div class="day${[index]}">
-            <div class="nextDayIcon${index}">
-              <img src="../assets/weather-icons/${item.weather[0].icon}.svg"
-              alt="nextdaysicons">
+              <p class="dayOfWeek">${weekDay[new Date(item.dt*1000).getDay()]}</p>
+              <div class="nextDayIcon${index}">
+                <img src="../assets/weather-icons/${item.weather[0].icon}.svg"
+                alt="nextdaysicons">
+              </div>
+              <div class="maxmin">
+                <i class="fas fa-arrows-alt-v"></i>
+                <div>
+                  <p class="max"><span>${Math.round(item.temp.max)}°C</span></p>
+                  <p class="min"><span>${Math.round(item.temp.min)}°C</span></p>
+                </div>
+              </div> 
             </div>
-            <p class="max">Max <span>${Math.round(item.temp.max)}°C</span></p>
-            <p class="min">Min <span>${Math.round(item.temp.min)}°C</span></p>
-            </div>
-            `).slice(0, 6).join('');
+            `).slice(1, 7).join('');
             // console.log(arrMaxMin3)
 
             //DISPLAY WEATHER OF NEXT DAYS TYPING CITY NAME
@@ -258,3 +281,11 @@ const displayError = () => {
     errorgetTodayWeatherByCity();
   })
 };
+
+
+// let forecastDays = new Date(dt*1000).getDay();
+// this expression get next days numbers of each week day after you can combine 
+// with a array with week days names.
+//
+// const daysofweek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+// const eachone = data.map(item, index) => ${dayofweek[new Date(item.dt*1000).getDay()]};

@@ -1,0 +1,17 @@
+.footer {
+ display: flex;
+justify-content: center;
+}
+
+.time {
+  text-align: center;
+  align-self: center;
+}
+
+.date {
+  font-size: 20px;
+}
+
+.clock {
+  font-size: 50px;
+}
