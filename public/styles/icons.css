@@ -53,12 +53,12 @@ nav ul li i {
 }
 
 .gmail {
-  content: url(../assets/heather-icons/gmail-initial.svg);
+  content: url(/assets/heather-icons/gmail-initial.svg);
   width: 56px;
 }
 
 .outlook {
-  content: url(../assets/heather-icons/outlook-initial.svg);
+  content: url(/assets/heather-icons/outlook-initial.svg);
   width: 56px;
 }
 
@@ -89,7 +89,7 @@ nav ul li i {
 }
 
 .fa-github {
-  content: url(../assets/heather-icons/github.svg);
+  content: url(/assets/heather-icons/github.svg);
   width: 68px;
   padding-top: 9px;
 }
@@ -104,7 +104,7 @@ nav ul li i {
 }
 
 .aliexpress {
-  content: url(../assets/heather-icons/aliexpress-initial.svg);
+  content: url(/assets/heather-icons/aliexpress-initial.svg);
   width: 44px;
 }
 
@@ -117,7 +117,7 @@ nav ul li i {
 }
 
 .bing {
-  content: url(../assets/heather-icons/bing-initial.svg);
+  content: url(/assets/heather-icons/bing-initial.svg);
   width: 54px;
   padding-left: 5px;
 }
@@ -135,7 +135,7 @@ nav ul li:nth-child(1) a:hover {
 }
 
 nav ul li:nth-child(1) a:hover i {
-  content: url(../assets/heather-icons/google.svg);
+  content: url(/assets/heather-icons/google.svg);
   width: 56px;
 }
 
@@ -193,7 +193,7 @@ nav ul li:nth-child(6) a:hover i {
 
 nav ul li:nth-child(7) a:hover {
   /* background: #f09433;  */
-  content: url(../assets/heather-icons/instagram.svg);
+  content: url(/assets/heather-icons/instagram.svg);
 }
 
 nav ul li:nth-child(7) a:hover i {
@@ -257,7 +257,7 @@ nav ul li:nth-child(13) a:hover {
 }
 
 nav ul li:nth-child(13) a:hover i {
-  content: url(../assets/heather-icons/gmail-hover.svg);
+  content: url(/assets/heather-icons/gmail-hover.svg);
 }
 
 /* OUTLOOK HOVER */
@@ -267,7 +267,7 @@ nav ul li:nth-child(14) a:hover {
 }
 
 nav ul li:nth-child(14) a:hover i {
-  content: url(../assets/heather-icons/outlook-hover.svg);
+  content: url(/assets/heather-icons/outlook-hover.svg);
 }
 
 /* REEDIT HOVER */
@@ -287,7 +287,7 @@ nav ul li:nth-child(16) a:hover {
 }
 
 nav ul li:nth-child(16) a:hover i {
-  content: url(../assets/heather-icons/tiktok.svg);
+  content: url(/assets/heather-icons/tiktok.svg);
   width: 50px;
 }
 
@@ -298,7 +298,7 @@ nav ul li:nth-child(17) a:hover {
 }
 
 nav ul li:nth-child(17) a:hover i {
-  content: url(../assets/heather-icons/github-hover.svg);
+  content: url(/assets/heather-icons/github-hover.svg);
   width: 68px;
   color: #ffffff;
 
@@ -320,7 +320,7 @@ nav ul li:nth-child(19) a:hover {
 }
 
 nav ul li:nth-child(19) a:hover i {
-  content: url(../assets/heather-icons/aliexpress-hover.svg);
+  content: url(/assets/heather-icons/aliexpress-hover.svg);
   width: 46px;
 }
 
@@ -352,32 +352,5 @@ nav ul li:nth-child(22) a:hover {
 }
 
 nav ul li:nth-child(22) a:hover i {
-  content: url(../assets/heather-icons/bing-hover.svg);
+  content: url(/assets/heather-icons/bing-hover.svg);
 }
-
-
-
-
-
-
-
-
-
-/* GOOGLE ICON BACKGROUND-COLOR */
-/* background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg,
-    #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
--webkit-text-fill-color: transparent; */
-
-/* INSTAGRAM ICON BACKGROUND-COLOR */
-/* background: #f09433;
-background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%,
-    #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%,
-    #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-background: linear-gradient(45deg, #f09433 0%, #e6683c 25%,
-    #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433',
-    endColorstr='#bc1888',GradientType=1); */

@@ -1,5 +1,5 @@
-import { apiKey } from '../js/apiKey.js'
-import { dateClock } from '../js/dateclock.js'
+import { weatherApiKey } from "./apiKeys.js";
+
 
 // SELECT ELEMENTS
 const local = document.querySelector('.local');
@@ -30,7 +30,7 @@ const showWeather = () => {
 
     // GET REQUEST TODAY WEATHER    
     const api = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat +
-      '&lon=' + long + '&appid=' + apiKey + '&units=metric';
+      '&lon=' + long + '&appid=' + weatherApiKey + '&units=metric';
 
     const getTodayData = async () => {
       try {
@@ -51,7 +51,7 @@ const showWeather = () => {
           local.textContent = `${data.name} - ${data.sys.country}`;
           todayDegree.textContent = todayData.temperature;
           todayInformations.textContent = todayData.humidity;
-          todayIcon.innerHTML = `<img src="../assets/weather-icons/${icon}.svg" 
+          todayIcon.innerHTML = `<img src="/assets/weather-icons/${icon}.svg" 
           alt="todayicon">`;
         };
         displayToday();
@@ -64,7 +64,7 @@ const showWeather = () => {
 
     // GET REQUEST NEXT DAYS WEATHER
     const api2 = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat +
-      '&lon=' + long + '&exclude=current,minutely,hourly&appid=' + apiKey +
+      '&lon=' + long + '&exclude=current,minutely,hourly&appid=' + weatherApiKey +
       '&units=metric';
 
     const getNextDaysData = async () => {
@@ -80,7 +80,7 @@ const showWeather = () => {
           <div>
             <p class="dayOfWeek">${weekDay[new Date(item.dt*1000).getDay()]}</p>
             <div class="nextDayIcon${index}">
-              <img src="../assets/weather-icons/${item.weather[0].icon}.svg"
+              <img src="/assets/weather-icons/${item.weather[0].icon}.svg"
               alt="nextdaysicons">
             </div>
             <div class="maxmin">
@@ -112,7 +112,7 @@ const showWeather = () => {
   submit.addEventListener('click', () => {
     const cityNamecountryCode = notification.value;
     const api3 = 'https://api.openweathermap.org/data/2.5/weather?q='
-     + cityNamecountryCode + '&appid=' + apiKey + '&units=metric';
+     + cityNamecountryCode + '&appid=' + weatherApiKey + '&units=metric';
 
     //GET REQUEST TODAY WEATHER TYPING CITY NAME
     const getTodayWeatherByCity = async () => {
@@ -134,7 +134,7 @@ const showWeather = () => {
         local.textContent = `${data3.name} - ${data3.sys.country}`;
         todayDegree.textContent = todayData3.temperature;
         todayInformations.textContent = todayData3.humidity;
-        todayIcon.innerHTML = `<img src="../assets/weather-icons/${todayData3.icon}.svg" 
+        todayIcon.innerHTML = `<img src="/assets/weather-icons/${todayData3.icon}.svg" 
           alt="todayicon">`;
         // CLEAR INPUT AFTER SUBMIT
         notification.value = '';
@@ -143,7 +143,7 @@ const showWeather = () => {
         const lat1 = data3.coord.lat;
         const long1 = data3.coord.lon;
         const api4 = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat1 +
-          '&lon=' + long1 + '&exclude=current,minutely,hourly&appid=' + apiKey +
+          '&lon=' + long1 + '&exclude=current,minutely,hourly&appid=' + weatherApiKey +
           '&units=metric';
 
         const getNextDaysByCityName = async () => {
@@ -159,7 +159,7 @@ const showWeather = () => {
             <div class="day${[index]}">
               <p class="dayOfWeek">${weekDay[new Date(item.dt*1000).getDay()]}</p>
               <div class="nextDayIcon${index}">
-                <img src="../assets/weather-icons/${item.weather[0].icon}.svg"
+                <img src="/assets/weather-icons/${item.weather[0].icon}.svg"
                 alt="nextdaysicons">
               </div>
               <div class="maxmin">
@@ -201,7 +201,7 @@ const displayError = () => {
   submit.addEventListener('click', () => {
     const cityNamecountryCode1 = notification.value;
     const api5 = 'https://api.openweathermap.org/data/2.5/weather?q=' 
-      + cityNamecountryCode1 + '&appid=' + apiKey + '&units=metric';
+      + cityNamecountryCode1 + '&appid=' + weatherApiKey + '&units=metric';
 
     //GET REQUEST TODAY WEATHER TYPING CITY NAME
     const errorgetTodayWeatherByCity = async () => {
@@ -223,7 +223,7 @@ const displayError = () => {
         local.textContent = `${data5.name} - ${data5.sys.country}`;
         todayDegree.textContent = todayData5.temperature;
         todayInformations.textContent = todayData5.humidity;
-        todayIcon.innerHTML = `<img src="../assets/weather-icons/${todayData5.icon}.svg" 
+        todayIcon.innerHTML = `<img src="/assets/weather-icons/${todayData5.icon}.svg" 
           alt="todayicon">`;
         // CLEAR INPUT AFTER SUBMIT
         notification.value = '';
@@ -232,7 +232,7 @@ const displayError = () => {
         const lat2 = data5.coord.lat;
         const long2 = data5.coord.lon;
         const api6 = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat2 +
-          '&lon=' + long2 + '&exclude=current,minutely,hourly&appid=' + apiKey +
+          '&lon=' + long2 + '&exclude=current,minutely,hourly&appid=' + weatherApiKey +
           '&units=metric';
 
         const getNextDaysByCityName = async () => {
@@ -248,7 +248,7 @@ const displayError = () => {
             <div class="day${[index]}">
               <p class="dayOfWeek">${weekDay[new Date(item.dt*1000).getDay()]}</p>
               <div class="nextDayIcon${index}">
-                <img src="../assets/weather-icons/${item.weather[0].icon}.svg"
+                <img src="/assets/weather-icons/${item.weather[0].icon}.svg"
                 alt="nextdaysicons">
               </div>
               <div class="maxmin">

@@ -1,0 +1,23 @@
+{
+  "name": "mydearpage",
+  "version": "1.0.0",
+  "description": "mydearpage is a page to use as a browser new tab. It has features as icons links to the mainly websites, weather app and a to-do list.",
+  "main": "index.html",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabrielpenteado/mydearpage.git"
+  },
+  "author": "Gabriel Penteado",
+  "license": "MIT",
+  "homepage": "https://mydearpage.vercel.app",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

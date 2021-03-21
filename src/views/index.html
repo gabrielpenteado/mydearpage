@@ -7,11 +7,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
     integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
     crossorigin="anonymous" />
-  <link rel="stylesheet" href="../views/index.html">
-  <link rel="stylesheet" href="../styles/home.css">
-  <link rel="stylesheet" href="../styles/icons.css">
-  <link rel="stylesheet" href="../styles/weather.css">
-  <link rel="stylesheet" href="../styles/dateclock.css">
+  <link rel="stylesheet" href="/styles/home.css">
+  <link rel="stylesheet" href="/styles/icons.css">
+  <link rel="stylesheet" href="/styles/weather.css">
+  <link rel="stylesheet" href="/styles/dateclock.css">
   <title>MyDearPage</title>
 </head>
 
@@ -62,11 +61,11 @@
       <h1 class="local"></h1>
       <div class="submitCityName">
         <input type="text" class="notification" placeholder="e.g. Toronto,CA">
-        <!-- <button class="submitButton" type="button">Submit</button> -->
         <i class="fa fa-search" aria-hidden="true"></i>
       </div>
       <div class="todayIcon">
-        <img src="../assets/weather-icons/unknown.svg" alt="todayicon" height="100px">
+        <img src="/assets/weather-icons/unknown.svg"
+         alt="todayicon" height="100px">
       </div>
       <div class="todayTemperature">
         <p><span></span>°C</p>
@@ -81,6 +80,10 @@
 
     <footer class="grid-item footer">
       <div class="time">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
         <div class="date">
           mounth, day, year
         </div>
@@ -92,8 +95,9 @@
 
   </div>
 
-  <script type="module" src="../js/dateclock.js"></script>
-  <script type="module" src="../js/weather.js"></script>
+  <script type="module" src="/scripts/apiKeys.js"></script>
+  <script type="text/javascript" src="/scripts/dateclock.js"></script>
+  <script type="module" src="/scripts/weather.js"></script> 
 </body>
 
 </html>

@@ -1,8 +1,8 @@
 // CLOCK FUNCTION
 
-export const dateClock = () => {
+const dateClock = () => {
   const time = new Date();
-  
+
   // DATE
   let dayWeek = time.getDay();
   let month = time.getMonth();
@@ -10,9 +10,9 @@ export const dateClock = () => {
   let year = time.getFullYear();
 
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
-   'Agost', 'September', 'October', 'November', 'December'];
+    'Agost', 'September', 'October', 'November', 'December'];
   const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
-   'Friday', 'Saturday'];
+    'Friday', 'Saturday'];
   const displayDate = `${weekDays[dayWeek]}, ${months[month]} ${dayNum}, ${year}`;
 
   // CLOCK
@@ -33,7 +33,7 @@ export const dateClock = () => {
   sec = (sec < 10) ? '0' + sec : sec;
 
   let currentTime = `${hrs}:${min}:${sec} ${ampm}`;
-  
+
   const objDateClock = {
     clock: currentTime,
     date: displayDate
@@ -47,8 +47,8 @@ export const dateClock = () => {
 let initClock = document.querySelector('.clock');
 let initDate = document.querySelector('.date');
 setInterval(() => {
- initClock.textContent = dateClock().clock;
- initDate.textContent = dateClock().date; 
+  initClock.textContent = dateClock().clock;
+  initDate.textContent = dateClock().date;
 }, 1000);
 
 
