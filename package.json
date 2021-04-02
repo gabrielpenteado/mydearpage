@@ -4,7 +4,8 @@
   "description": "mydearpage is a page to use as a browser new tab. It has features as icons links to the mainly websites, weather app and a to-do list.",
   "main": "index.html",
   "scripts": {
-    "start": "nodemon src/server.js"
+    "start": "node src/server.js",
+    "test": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -14,8 +15,10 @@
   "license": "MIT",
   "homepage": "https://mydearpage.vercel.app",
   "dependencies": {
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "qs": "^6.10.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
