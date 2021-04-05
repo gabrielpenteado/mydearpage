@@ -2,7 +2,7 @@
   "name": "mydearpage",
   "version": "1.0.0",
   "description": "mydearpage is a page to use as a browser new tab. It has features as icons links to the mainly websites, weather app and a to-do list.",
-  "main": "index.html",
+  "main": "server.js",
   "scripts": {
     "start": "node src/server.js",
     "test": "nodemon src/server.js"
@@ -17,6 +17,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
     "qs": "^6.10.1"
   },
