@@ -7,11 +7,16 @@ const todayDegree = document.querySelector('.todayTemperature p span');
 const todayInformations = document.querySelector('.todayTemperature h3 span');
 const nextDays = document.querySelector('.nextDays');
 const submit = document.querySelector('.fa-search');
+const spin = document.querySelector('.fa-spin');
 
 
 // CHECK IF BROWSER SUPPORT GEOLOCATION AND GET IT WHEN PAGE LOADS,
 // IF NOT, DISPLAY MESSAGE TO USER TYPE CITY NAME. 
 window.addEventListener('load', () => {
+  // SPIN LOADING ON
+  submit.style.visibility = 'hidden';
+  spin.style.visibility = 'visible';
+
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(getTodayWeather, displayError);
   }
@@ -25,14 +30,14 @@ const weekDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 // FUNCTION WEATHER ON LOAD
 const getTodayWeather = () => {
-  navigator.geolocation.getCurrentPosition( async position => {
+  navigator.geolocation.getCurrentPosition(async position => {
     const lon = position.coords.longitude;
     const lat = position.coords.latitude;
     const coord = {
       lat: lat,
       lon: lon
     }
-    
+
     const options = {
       method: 'POST',
       headers: {
@@ -48,11 +53,15 @@ const getTodayWeather = () => {
     const { temp, humidity } = data.today.main;
     const { icon } = data.today.weather[0];
     const todayData = {
-       temperature: Math.round(temp),
-       humidity: Math.round(humidity),
-       icon: icon
+      temperature: Math.round(temp),
+      humidity: Math.round(humidity),
+      icon: icon
     };
-    
+
+    // SPIN LOADING OFF
+    submit.style.visibility = 'visible';
+    spin.style.visibility = 'hidden';
+
     // DISPLAY WEATHER TODAY
     local.textContent = `${data.today.name} - ${data.today.sys.country}`;
     todayDegree.textContent = todayData.temperature;
@@ -77,7 +86,7 @@ const getTodayWeather = () => {
       </div>
     `).slice(1, 7).join('');
     // console.log(arrMaxMin)
-    
+
     //DISPLAY WEATHER OF NEXT DAYS
     nextDays.innerHTML = arrMaxMin;
   })
@@ -88,6 +97,9 @@ const getTodayWeather = () => {
 // FUNCTION WEATHER BY TYPING CITY NAME
 const getWeatherByCityName = () => {
   submit.addEventListener('click', async () => {
+    // SPIN LOADING ON
+    submit.style.visibility = 'hidden';
+    spin.style.visibility = 'visible';
     const cityNamecountryCode = {
       q: notification.value
     };
@@ -112,6 +124,9 @@ const getWeatherByCityName = () => {
     };
     // console.log(todayData);
 
+    // SPIN LOADING OFF
+    submit.style.visibility = 'visible';
+    spin.style.visibility = 'hidden';
     // DISPLAY WEATHER TODAY TYPING CITY
     local.textContent = `${data.today.name} - ${data.today.sys.country}`;
     todayDegree.textContent = todayData.temperature;
