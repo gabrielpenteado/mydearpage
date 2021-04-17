@@ -1,12 +1,7 @@
 // MODULES
-// const express = require('express');
-// const app = express();
 const axios = require('axios');
 var qs = require('qs');
 require('dotenv').config();
-
-//CONFIG
-// app.use(express.json({ limit: '1mb' }));
 
 // URLs API WEATHER
 const todayURL = 'https://api.openweathermap.org/data/2.5/weather';
@@ -36,9 +31,10 @@ async function getWeatherOnLoad (req, res, next) {
     res.send(onloadData);
 
   } catch (err) {
-    console.log(err)
+    console.log(err.response.data);
   }
-
 }
+
+
 
 module.exports = getWeatherOnLoad;

@@ -8,6 +8,20 @@ const todayInformations = document.querySelector('.todayTemperature h3 span');
 const nextDays = document.querySelector('.nextDays');
 const submit = document.querySelector('.fa-search');
 const spin = document.querySelector('.fa-spin');
+const alertPopUp = document.querySelector('.alertPopUp');
+const alertMessage = document.querySelector('.alertPopUp span');
+const alertClose = document.querySelector('.alertPopUp a');
+
+
+// DAYS OF WEEK ARRAY
+const weekDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+// FUNCTION CLEAR INPUT CITY AND TURN OFF LOADING SPIN
+const resetCity = () => {
+  notification.value = '';
+  submit.style.visibility = 'visible';
+  spin.style.visibility = 'hidden';
+};
 
 
 // CHECK IF BROWSER SUPPORT GEOLOCATION AND GET IT WHEN PAGE LOADS,
@@ -21,12 +35,9 @@ window.addEventListener('load', () => {
     navigator.geolocation.getCurrentPosition(getTodayWeather, displayError);
   }
   else {
-    alert("Geolocation is not available");
+    alert("Geolocation is not supported.");
   }
 })
-
-// DAYS OF WEEK ARRAY
-const weekDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 // FUNCTION WEATHER ON LOAD
 const getTodayWeather = () => {
@@ -49,6 +60,19 @@ const getTodayWeather = () => {
     const response = await fetch('/onload', options);
     const data = await response.json();
     // console.log(data);
+
+    // HANDLE REQUEST ERRORS
+    if (data.cod === '404') {
+      alertPopUp.style.display = 'flex';
+      alertMessage.innerHTML = `<h1>${data.cod} - ${data.message}.
+       Please, type city name again.</h1>`;
+
+      resetCity();
+
+      alertClose.addEventListener('click', () => {
+        alertPopUp.style.display = 'none';
+      })
+    }
 
     const { temp, humidity } = data.today.main;
     const { icon } = data.today.weather[0];
@@ -113,8 +137,21 @@ const getWeatherByCityName = () => {
     };
     const response = await fetch('/cityname', options);
     const data = await response.json();
-    // console.log(data)
+    // console.log(data);
 
+    // HANDLE REQUEST ERRORS
+    if (data.cod === '404') {
+      alertPopUp.style.display = 'flex';
+      alertMessage.innerHTML = `<h1>${data.cod} - ${data.message}.
+       Please, type city name again.</h1>`;
+
+      resetCity();
+
+      alertClose.addEventListener('click', () => {
+        alertPopUp.style.display = 'none';
+      })
+    }
+     
     const { temp, humidity } = data.today.main;
     const { icon } = data.today.weather[0];
     const todayData = {
@@ -167,8 +204,18 @@ getWeatherByCityName();
 //DISPLAY ERROR
 const displayError = () => {
   // SHOW ALERT
-  alert("Please, use input field to write your city name and get weather info.");
+  alertPopUp.style.display = 'flex';
+  alertMessage.innerHTML = "<h2>Your geolocation is not enabled or is not supported by your browser."
+    + " Please, use input field to write your city name and get weather info.</h2>";
+
+  submit.style.visibility = 'visible';
+  spin.style.visibility = 'hidden';
+
+  alertClose.addEventListener('click', () => {
+    alertPopUp.style.display = 'none';
+  })
+
   // REPEAT FUNCTION SHOW WEATHER TYPING CITY NAME
-  submit.addEventListener('click', getWeatherByCityName())
+  submit.addEventListener('click', getWeatherByCityName)
 };
 

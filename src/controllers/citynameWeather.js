@@ -39,7 +39,8 @@ async function getWeatherByCity (req, res, next) {
     res.send(citynameData);
 
   } catch (err) {
-    console.log(err);
+    console.log(err.response.data);
+    res.json(err.response.data);
   }
 }
 
