@@ -1,0 +1,88 @@
+.to-do {
+  display: flex;
+}
+
+.list {
+  width: 100%;
+  position: relative;
+}
+
+.item {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: transparent;
+  border-bottom: 2px solid #ffffff;
+  font-size: 20px;
+}
+
+.item i {
+  margin: 3px 15px 0;
+}
+
+.item .textToDo {
+  position: relative;
+  margin-right: auto;
+  margin-left: 8px;
+  margin-top: 2px;
+}
+
+.item .lineThrough {
+  position: relative;
+  margin-right: auto;
+  margin-left: 8px;
+  margin-top: 2px;
+  text-decoration: line-through;
+}
+
+.fa-circle {
+  font-size: 22px;
+}
+
+.fa-trash-alt {
+  font-size: 21px;
+}
+
+.fa-sync-alt {
+  padding-right: 16px;
+  padding-top: 2px;
+  padding: 6px 16px 0 0;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.inputToDo {
+  width: 100%;
+  position: relative;
+  margin-left: 20px;
+  margin-right: 16px;
+  margin-bottom: 10px;
+  background: transparent;
+  color: #ffffff;
+  padding: 20px;
+  font-size: 16px;
+  height: 40px;
+  outline: none;
+  backdrop-filter: blur(10px);
+}
+
+.inputToDo::placeholder {
+  color: #ffffff;
+  font-size: 18px ;
+  opacity: 0.55;
+}
+
+.addItem {
+  display: flex;
+  align-self: flex-end;
+  position: absolute;
+  width: 100%;
+}
+
+.fa-plus-circle {
+  font-size: 34px;
+  padding: 6px 0 0 24px;
+  cursor: pointer;
+}

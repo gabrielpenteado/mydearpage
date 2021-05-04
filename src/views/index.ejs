@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="/styles/icons.css">
   <link rel="stylesheet" href="/styles/weather.css">
   <link rel="stylesheet" href="/styles/dateclock.css">
+  <link rel="stylesheet" href="/styles/to-do-list.css">
   <title>MyDearPage</title>
 </head>
 
@@ -52,14 +53,14 @@
 
     <!-- SECTION -->
 
-    <section class="grid-item section">
+    <section class="grid-item to-do">
       <ul class="list">
-        <li class="itemList"></li>
-
       </ul>
-      <div class="add-itemList">
 
-
+      <div class="addItem">
+        <i class="fas fa-plus-circle"></i>
+        <input type="text" class="inputToDo" placeholder="Write your to-do here.">
+        <i class="fas fa-sync-alt"></i>
       </div>
     </section>
 
@@ -68,7 +69,7 @@
     <aside class="grid-item weather">
       <h1 class="local"></h1>
       <div class="submitCityName">
-        <input type="text" class="notification" placeholder="e.g. Toronto,CA">
+        <input type="text" class="inputCityName" placeholder="e.g. Toronto,CA">
         <i class="fa fa-search"></i>
         <i class="fas fa-circle-notch fa-spin"></i>
         <i class="onlyspinborder"></i>
@@ -103,9 +104,10 @@
       </div>
     </footer>
 
-    <!-- ALERT POP UP -->
+    <!-- ALERT POP UP / HIDE IN DIV.CONTAINER -->
     <div class="alertPopUp">
       <i class="fas fa-exclamation-circle"></i>
+      <i class="far fa-hand-paper"></i>
       <span></span>
       <a>Close</a>
     </div>
@@ -113,7 +115,8 @@
   </div>
 
   <script type="text/javascript" src="/scripts/dateclock.js"></script>
-  <script type="module" src="/scripts/weather.js"></script> 
+  <script type="text/javascript" src="/scripts/weather.js"></script>
+  <script type="text/javascript" src="/scripts/to-do-list.js"></script> 
 </body>
 
 </html>
