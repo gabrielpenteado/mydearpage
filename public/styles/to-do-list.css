@@ -1,5 +1,6 @@
 .to-do {
   display: flex;
+  flex-direction: column;
 }
 
 .list {
@@ -12,14 +13,17 @@
   position: relative;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 10px 19px;
   background-color: transparent;
   border-bottom: 2px solid #ffffff;
   font-size: 20px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;   
+  word-break: break-word;
 }
 
 .item i {
-  margin: 3px 15px 0;
+  margin: 3px 47px 0;
 }
 
 .item .textToDo {
@@ -43,29 +47,44 @@
 
 .fa-trash-alt {
   font-size: 21px;
-}
-
-.fa-sync-alt {
-  padding-right: 16px;
-  padding-top: 2px;
-  padding: 6px 16px 0 0;
-  font-size: 32px;
   cursor: pointer;
 }
 
-.inputToDo {
+.fa-trash-alt:hover {
+  color: #ff0000;
+}
+
+.addItem {
+  display: flex;
   width: 100%;
-  position: relative;
-  margin-left: 20px;
-  margin-right: 16px;
-  margin-bottom: 10px;
+  justify-content: space-evenly;
+  margin-top: auto;
+  margin-bottom: 9px;
+  gap: 8px;
+}
+
+.fa-plus-circle {
+  font-size: 34px;
+  cursor: pointer;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+.inputToDo {
   background: transparent;
   color: #ffffff;
-  padding: 20px;
-  font-size: 16px;
-  height: 40px;
+  font-size: 18px;
   outline: none;
   backdrop-filter: blur(10px);
+  width: 70%;
+  padding-left: 24px;
 }
 
 .inputToDo::placeholder {
@@ -74,15 +93,77 @@
   opacity: 0.55;
 }
 
-.addItem {
-  display: flex;
-  align-self: flex-end;
-  position: absolute;
-  width: 100%;
+.fa-square {
+  font-size: 34px;
+  cursor: pointer;
+  transform: scale(1.2, 1);
 }
 
-.fa-plus-circle {
+.colorPallet {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.todoColors {
+  display: none;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+.colors {
+  opacity: 0;
+}
+
+@keyframes colorsEffect {
+  0% {
+    opacity: 0;
+    transform: rotateX(45deg) translateX(-25px);
+  }
+  100% {
+    opacity: 100%;
+    transform: rotateX(0deg) translateY(0deg);
+  }
+}
+
+.color1 {
+  color: cornflowerblue; 
+}
+
+.color2 {
+  color:darkviolet; 
+}
+
+.color3 {
+  color:tomato; 
+}
+
+.color4 {
+  color:darkgoldenrod; 
+}
+
+.animation1 {  
+  animation: colorsEffect 400ms ease-in-out 150ms forwards;
+}
+
+.animation2 {  
+  animation: colorsEffect 400ms ease-in-out 300ms forwards;
+}
+
+.animation3 {  
+  animation: colorsEffect 400ms ease-in-out 450ms forwards;
+}
+
+.animation4 {  
+  animation: colorsEffect 400ms ease-in-out 600ms forwards;
+}
+
+.fa-sync-alt {
   font-size: 34px;
-  padding: 6px 0 0 24px;
   cursor: pointer;
+}
+
+.fa-sync-alt .fa-spin {
+  font-size: 34px;
 }

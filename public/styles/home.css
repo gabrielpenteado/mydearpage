@@ -24,6 +24,7 @@ body {
 .container {
   display: grid;
   position: relative;
+  overflow: auto;
   gap: 5px;
   height: 100vh;
   grid-template-areas: 

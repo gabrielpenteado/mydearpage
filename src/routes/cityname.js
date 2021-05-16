@@ -8,4 +8,5 @@ const getWeatherByCity = require('../controllers/citynameWeather')
 // ROUTE
 router.post('/cityname', getWeatherByCity); 
  
+
 module.exports = router;

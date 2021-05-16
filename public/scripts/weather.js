@@ -1,4 +1,3 @@
-
 // SELECT ELEMENTS
 const local = document.querySelector('.local');
 const inputCityName = document.querySelector('.inputCityName');
@@ -6,12 +5,12 @@ const todayIcon = document.querySelector('.todayIcon');
 const todayDegree = document.querySelector('.todayTemperature p span');
 const todayInformations = document.querySelector('.todayTemperature h3 span');
 const nextDays = document.querySelector('.nextDays');
-const submit = document.querySelector('.fa-search');
-const spin = document.querySelector('.fa-spin');
+const searchIcon = document.querySelector('.fa-search');
+const spinIcon = document.querySelector('.fa-circle-notch');
 const alertPopUp = document.querySelector('.alertPopUp');
 const alertMessage = document.querySelector('.alertPopUp span');
 const alertClose = document.querySelector('.alertPopUp a');
-const handAlertIcon = document.querySelector('.fa-hand-paper');
+const alertIconWeather = document.querySelector('.fa-exclamation-circle');
 
 // DAYS OF WEEK ARRAY
 const weekDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -19,17 +18,24 @@ const weekDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 // FUNCTION CLEAR INPUT CITY AND TURN OFF LOADING SPIN
 const resetCity = () => {
   inputCityName.value = '';
-  submit.style.visibility = 'visible';
-  spin.style.visibility = 'hidden';
+  searchIcon.classList.remove("fas", "fa-circle-notch", "fa-spin");
+  searchIcon.classList.add("fa", "fa-search");
 };
 
+// FUNCTION TO CHECK AND CHANGE ALERT POP-UP WEATHER ICON
+const alertPopUpIconChange = () => {
+  if (!alertIconWeather.classList.contains('fa-exclamation-circle')) {
+    alertIconWeather.classList.add('fa-exclamation-circle');
+    alertIconWeather.classList.remove('fa-hand-paper');
+  }
+};
 
 // CHECK IF BROWSER SUPPORT GEOLOCATION AND GET IT WHEN PAGE LOADS,
 // IF NOT, DISPLAY MESSAGE TO USER TYPE CITY NAME. 
 window.addEventListener('load', () => {
   // SPIN LOADING ON
-  submit.style.visibility = 'hidden';
-  spin.style.visibility = 'visible';
+  searchIcon.classList.remove("fa", "fa-search");
+  searchIcon.classList.add("fas", "fa-circle-notch", "fa-spin");
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(getTodayWeather, displayError);
@@ -39,62 +45,61 @@ window.addEventListener('load', () => {
 })
 
 // FUNCTION WEATHER ON LOAD
-const getTodayWeather = () => {
-  navigator.geolocation.getCurrentPosition(async position => {
-    const lon = position.coords.longitude;
-    const lat = position.coords.latitude;
-    const coord = {
-      lat: lat,
-      lon: lon
-    }
+const getTodayWeather = async (position) => {
+  const lon = position.coords.longitude;
+  const lat = position.coords.latitude;
+  const coord = {
+    lat: lat,
+    lon: lon
+  }
 
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(coord)
-    };
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(coord)
+  };
 
-    const response = await fetch('/onload', options);
-    const data = await response.json();
-    // console.log(data);
+  const response = await fetch('/onload', options);
+  const data = await response.json();
+  // console.log(data);
 
-    // HANDLE REQUEST ERRORS
-    if (data.cod === '404' || data.cod === '400') {
-      handAlertIcon.style.display = 'none';
+  // HANDLE REQUEST ERRORS
+  if (data.cod === '404' || data.cod === '400') {
+    alertPopUpIconChange();
 
-      alertPopUp.style.display = 'flex';
-      alertMessage.innerHTML = `<h1>${data.cod} - ${data.message}.
-       Please, type city name again.</h1>`;
+    alertPopUp.style.display = 'flex';
+    alertMessage.innerHTML = `<h1>${data.cod} - ${data.message}.
+       Please, type city name.</h1>`;
 
-      resetCity();
+    resetCity();
 
-      alertClose.addEventListener('click', () => {
-        alertPopUp.style.display = 'none';
-      })
-    }
+    alertClose.addEventListener('click', () => {
+      alertPopUp.style.display = 'none';
+    })
+  }
 
-    const { temp, humidity } = data.today.main;
-    const { icon } = data.today.weather[0];
-    const todayData = {
-      temperature: Math.round(temp),
-      humidity: Math.round(humidity),
-      icon: icon
-    };
+  const { temp, humidity } = data.today.main;
+  const { icon } = data.today.weather[0];
+  const todayData = {
+    temperature: Math.round(temp),
+    humidity: Math.round(humidity),
+    icon: icon
+  };
 
-    // SPIN LOADING OFF
-    submit.style.visibility = 'visible';
-    spin.style.visibility = 'hidden';
+  // SPIN LOADING OFF
+  searchIcon.classList.remove("fas", "fa-circle-notch", "fa-spin");
+  searchIcon.classList.add("fa", "fa-search");
 
-    // DISPLAY WEATHER TODAY
-    local.textContent = `${data.today.name} - ${data.today.sys.country}`;
-    todayDegree.textContent = todayData.temperature;
-    todayInformations.textContent = todayData.humidity;
-    todayIcon.innerHTML = `<img src="/assets/weather-icons/${icon}.svg" alt="todayicon">`;
+  // DISPLAY WEATHER TODAY
+  local.textContent = `${data.today.name} - ${data.today.sys.country}`;
+  todayDegree.textContent = todayData.temperature;
+  todayInformations.textContent = todayData.humidity;
+  todayIcon.innerHTML = `<img src="/assets/weather-icons/${icon}.svg" alt="todayicon">`;
 
-    // GET MAX AND MIN TEMP FROM NEXT DAYS
-    const arrMaxMin = data.nextDays.daily.map((item, index) => `
+  // GET MAX AND MIN TEMP FROM NEXT DAYS
+  const arrMaxMin = data.nextDays.daily.map((item, index) => `
       <div>
         <p class="dayOfWeek">${weekDay[new Date(item.dt * 1000).getDay()]}</p>
         <div class="nextDayIcon${index}">
@@ -110,11 +115,10 @@ const getTodayWeather = () => {
         </div> 
       </div>
     `).slice(1, 7).join('');
-    // console.log(arrMaxMin)
+  // console.log(arrMaxMin)
 
-    //DISPLAY WEATHER OF NEXT DAYS
-    nextDays.innerHTML = arrMaxMin;
-  })
+  //DISPLAY WEATHER OF NEXT DAYS
+  nextDays.innerHTML = arrMaxMin;
 };
 
 
@@ -122,9 +126,11 @@ const getTodayWeather = () => {
 // FUNCTION WEATHER BY TYPING CITY NAME
 const getWeatherByCityName = async (event) => {
   if (event.key === "Enter" || event.type === 'click') {
+
     // SPIN LOADING ON
-    submit.style.visibility = 'hidden';
-    spin.style.visibility = 'visible';
+    searchIcon.classList.remove("fa", "fa-search");
+    searchIcon.classList.add("fas", "fa-circle-notch", "fa-spin");
+
     const cityNamecountryCode = {
       q: inputCityName.value
     };
@@ -142,7 +148,7 @@ const getWeatherByCityName = async (event) => {
 
     // HANDLE REQUEST ERRORS
     if (data.cod === '404' || data.cod === '400') {
-      handAlertIcon.style.display = 'none';
+      alertPopUpIconChange();
 
       alertPopUp.style.display = 'flex';
       alertMessage.innerHTML = `<h1>${data.cod} - ${data.message}.
@@ -165,8 +171,9 @@ const getWeatherByCityName = async (event) => {
     // console.log(todayData);
 
     // SPIN LOADING OFF
-    submit.style.visibility = 'visible';
-    spin.style.visibility = 'hidden';
+    searchIcon.classList.remove("fas", "fa-circle-notch", "fa-spin");
+    searchIcon.classList.add("fa", "fa-search");
+
     // DISPLAY WEATHER TODAY TYPING CITY
     local.textContent = `${data.today.name} - ${data.today.sys.country}`;
     todayDegree.textContent = todayData.temperature;
@@ -202,21 +209,21 @@ const getWeatherByCityName = async (event) => {
 
 // HANDLE ENTER KEY AND MOUSE CLICK EVENTS
 inputCityName.addEventListener('keyup', getWeatherByCityName);
-submit.addEventListener('click', getWeatherByCityName);
+searchIcon.addEventListener('click', getWeatherByCityName);
 
 
 
 //DISPLAY ERROR
 const displayError = () => {
   // SHOW ALERT
-  handAlertIcon.style.display = 'none';
+  alertPopUpIconChange();
 
   alertPopUp.style.display = 'flex';
   alertMessage.innerHTML = "<h2>Your geolocation is not enabled or is not supported by your browser."
     + " Please, use input field to write your city name and get weather info.</h2>";
 
-  submit.style.visibility = 'visible';
-  spin.style.visibility = 'hidden';
+  searchIcon.classList.remove("fas", "fa-circle-notch", "fa-spin");
+  searchIcon.classList.add("fa", "fa-search");
 
   alertClose.addEventListener('click', () => {
     alertPopUp.style.display = 'none';

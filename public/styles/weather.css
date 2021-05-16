@@ -24,7 +24,6 @@
   position: relative;
   align-self: center;
   justify-self: center;
-  left: 22px;
 }
 
 .submitCityName .fa-search {
@@ -38,23 +37,14 @@
   cursor: pointer;
 }
 
-.fa-spin {
+.fa-circle-notch {
   position: relative;
-  visibility: hidden;
-  font-size: 21px;
-  right: 75px;
-  top: 2.5px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.onlyspinborder  {
-  position: relative;
-  border-left: 1px solid #ffffff;
-  right: 59px;
-  top: 0.7px;
-  font-size: 18px;
-  display: none;
+  font-size: 22px;
+  right: 30px;
+  top: 3px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .inputCityName::placeholder {
