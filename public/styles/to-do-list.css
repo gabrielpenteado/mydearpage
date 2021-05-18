@@ -33,16 +33,20 @@
   margin-top: 2px;
 }
 
-.item .lineThrough {
-  position: relative;
-  margin-right: auto;
-  margin-left: 8px;
-  margin-top: 2px;
-  text-decoration: line-through;
+.lineThrough {
+  text-decoration: line-through red;
 }
 
 .fa-circle {
   font-size: 22px;
+  cursor: pointer;
+}
+
+.fa-check-circle {
+  font-size: 22px;
+  cursor: pointer;
+  color: green;
+  background: radial-gradient(white 40%, transparent 70%)
 }
 
 .fa-trash-alt {
@@ -66,6 +70,7 @@
 .fa-plus-circle {
   font-size: 34px;
   cursor: pointer;
+  /* animation: rotation 1s ease-out; INSERTED WITH JS*/
 }
 
 @keyframes rotation {
@@ -128,7 +133,7 @@
 }
 
 .color1 {
-  color: cornflowerblue; 
+  color:blue; 
 }
 
 .color2 {

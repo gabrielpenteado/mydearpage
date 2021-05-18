@@ -2,6 +2,7 @@
 const local = document.querySelector('.local');
 const inputCityName = document.querySelector('.inputCityName');
 const todayIcon = document.querySelector('.todayIcon');
+const todayTemperature = document.querySelector('.todayTemperature');
 const todayDegree = document.querySelector('.todayTemperature p span');
 const todayInformations = document.querySelector('.todayTemperature h3 span');
 const nextDays = document.querySelector('.nextDays');
@@ -11,6 +12,7 @@ const alertPopUp = document.querySelector('.alertPopUp');
 const alertMessage = document.querySelector('.alertPopUp span');
 const alertClose = document.querySelector('.alertPopUp a');
 const alertIconWeather = document.querySelector('.fa-exclamation-circle');
+const freezePageWeather = document.querySelectorAll('.freezeWithAlert');
 
 // DAYS OF WEEK ARRAY
 const weekDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -29,6 +31,31 @@ const alertPopUpIconChange = () => {
     alertIconWeather.classList.remove('fa-hand-paper');
   }
 };
+
+// FUNCTION TO FREEZE BACKGROUND WITH ALERT POP-UP
+const freezePage2 = () => {
+  freezePageWeather.forEach(item => {
+    item.style.pointerEvents = 'none';
+  })
+} 
+// FUNCTION TO UNFREEZE BACKGROUND WITH ALERT POP-UP
+const unfreezePage2 = () => {
+  freezePageWeather.forEach(item => {
+    item.style.pointerEvents = 'auto';
+  })
+}
+
+// WEATHER DISPLAY ANIMATION
+const animationIn = () => {
+  todayIcon.style.animation = 'weatherAnimation 700ms ease-in';
+  todayTemperature.style.animation = 'weatherAnimation 700ms ease-in';
+  nextDays.style.animation = 'weatherAnimation 700ms ease-in';  
+}
+const animationOut = () => {
+  todayIcon.style.animation = '';
+  todayTemperature.style.animation = '';
+  nextDays.style.animation = '';
+}
 
 // CHECK IF BROWSER SUPPORT GEOLOCATION AND GET IT WHEN PAGE LOADS,
 // IF NOT, DISPLAY MESSAGE TO USER TYPE CITY NAME. 
@@ -72,11 +99,13 @@ const getTodayWeather = async (position) => {
     alertPopUp.style.display = 'flex';
     alertMessage.innerHTML = `<h1>${data.cod} - ${data.message}.
        Please, type city name.</h1>`;
-
+    
+    freezePage2();
     resetCity();
 
     alertClose.addEventListener('click', () => {
       alertPopUp.style.display = 'none';
+      unfreezePage2();
     })
   }
 
@@ -93,6 +122,7 @@ const getTodayWeather = async (position) => {
   searchIcon.classList.add("fa", "fa-search");
 
   // DISPLAY WEATHER TODAY
+  animationIn();
   local.textContent = `${data.today.name} - ${data.today.sys.country}`;
   todayDegree.textContent = todayData.temperature;
   todayInformations.textContent = todayData.humidity;
@@ -122,11 +152,11 @@ const getTodayWeather = async (position) => {
 };
 
 
-
 // FUNCTION WEATHER BY TYPING CITY NAME
 const getWeatherByCityName = async (event) => {
   if (event.key === "Enter" || event.type === 'click') {
 
+    animationOut();
     // SPIN LOADING ON
     searchIcon.classList.remove("fa", "fa-search");
     searchIcon.classList.add("fas", "fa-circle-notch", "fa-spin");
@@ -153,11 +183,13 @@ const getWeatherByCityName = async (event) => {
       alertPopUp.style.display = 'flex';
       alertMessage.innerHTML = `<h1>${data.cod} - ${data.message}.
           Please, type city name again.</h1>`;
-
+      
+      freezePage2();
       resetCity();
 
       alertClose.addEventListener('click', () => {
         alertPopUp.style.display = 'none';
+        unfreezePage2();
       })
     }
 
@@ -175,6 +207,7 @@ const getWeatherByCityName = async (event) => {
     searchIcon.classList.add("fa", "fa-search");
 
     // DISPLAY WEATHER TODAY TYPING CITY
+    animationIn();
     local.textContent = `${data.today.name} - ${data.today.sys.country}`;
     todayDegree.textContent = todayData.temperature;
     todayInformations.textContent = todayData.humidity;
@@ -212,7 +245,6 @@ inputCityName.addEventListener('keyup', getWeatherByCityName);
 searchIcon.addEventListener('click', getWeatherByCityName);
 
 
-
 //DISPLAY ERROR
 const displayError = () => {
   // SHOW ALERT
@@ -224,9 +256,10 @@ const displayError = () => {
 
   searchIcon.classList.remove("fas", "fa-circle-notch", "fa-spin");
   searchIcon.classList.add("fa", "fa-search");
+  freezePage2();
 
   alertClose.addEventListener('click', () => {
     alertPopUp.style.display = 'none';
+    unfreezePage2();
   })
 };
-

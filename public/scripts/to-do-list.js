@@ -1,22 +1,30 @@
 // SELECT ELEMENTS
 const list = document.querySelector('.list');
 const addItem = document.querySelector('.addItem');
-const textToDo = document.querySelector('.textToDo');
 const addButton = document.querySelector('.fa-plus-circle');
-const itemToDo = document.querySelector('.item');
 const colorButton = document.querySelector('.transparent');
 const todoColors = document.querySelector('.todoColors');
 const colors = document.querySelectorAll('.colors');
-const color1 = document.querySelector('.color1');
-const color2 = document.querySelector('.color2');
-const color3 = document.querySelector('.color3');
-const color4 = document.querySelector('.color4');
 const refreshButton = document.querySelector('.fa-sync-alt');
 const input = document.querySelector('.inputToDo');
 const alertToDo = document.querySelector('.alertPopUp');
 const alertPhrase = document.querySelector('.alertPopUp span');
 const alertButton = document.querySelector('.alertPopUp a');
 const alertIconToDo = document.querySelector('.fa-exclamation-circle');
+const freezePageToDo = document.querySelectorAll('.freezeWithAlert');
+
+// FUNCTION TO FREEZE BACKGROUND WITH ALERT POP-UP
+const freezePage1 = () => {
+  freezePageToDo.forEach(item => {
+    item.style.pointerEvents = 'none';
+  })
+} 
+// FUNCTION TO UNFREEZE BACKGROUND WITH ALERT POP-UP
+const unfreezePage1 = () => {
+  freezePageToDo.forEach(item => {
+    item.style.pointerEvents = 'auto';
+  })
+}
 
 // FUNCTION TO OPEN TODO PALLET COLOR
 const openPalletColor = () => {
@@ -61,7 +69,6 @@ const selectColor = (event) => {
   changeColor(colorID);
 }
 
-
 // FUNCTION ADD TO-DO
 const addToDo = (text, backgColor) => {
   const toDo = `
@@ -73,7 +80,6 @@ const addToDo = (text, backgColor) => {
 
   list.insertAdjacentHTML("beforeend", toDo);
 }
-
 
 // ADD TO-DO WITH ENTER KEY AND MOUSE CLICK AND SHOW TO-DO LIMIT ALERT
 const todoStore = [];
@@ -87,7 +93,7 @@ const executeToDo = (event) => {
         backgColor = 'transparent';
         break;
       case 'color1':
-        backgColor = 'cornflowerblue';
+        backgColor = 'blue';
         break;
       case 'color2':
         backgColor = 'darkviolet';
@@ -105,7 +111,8 @@ const executeToDo = (event) => {
       addToDo(text, backgColor);
       todoStore.push({
         text: text,
-        backgColor: backgColor
+        backgColor: backgColor,
+        status: 'pending'
       });
       // ANIMATION OF PLUS CIRCLE BUTTON
       addButton.style.animation = 'rotation 1s ease-out';
@@ -115,21 +122,46 @@ const executeToDo = (event) => {
     }
     input.value = '';
     // console.log(todoStore);
+
     // DISPLAY LIMIT ALERT
   } else if ((event.key === 'Enter' || event.type === 'click') && todoStore.length >= 9) {
     if (alertIconToDo.classList.contains('fa-exclamation-circle')) {
       alertIconToDo.classList.remove('fa-exclamation-circle');
       alertIconToDo.classList.add('fa-hand-paper');
     }
-
     alertToDo.style.display = 'flex';
     alertPhrase.innerHTML = '<h1>You have reached the to-do items limit.</h1>';
+    freezePage1();
+
     alertButton.addEventListener('click', () => {
       alertToDo.style.display = 'none';
+      unfreezePage1();
     })
     input.value = '';
   }
 };
+
+// FUNCTION TO CHECK/UNCHECK A TODO
+const todoCompleted = (event) => {
+  const todoCheckIcon = event.target;
+
+  if (todoCheckIcon.className === 'far fa-circle' || todoCheckIcon.className === 'fas fa-check-circle') {
+    const todoCheckText = event.target.nextElementSibling.textContent
+    const todoCheckTextClass = event.target.nextElementSibling.classList;
+    todoCheckTextClass.toggle('lineThrough');
+
+    todoStore.forEach((item, index) => {
+      if (todoCheckText === item.text && todoCheckTextClass.contains('lineThrough')) {
+        todoCheckIcon.className = 'fas fa-check-circle';
+        item.status = 'completed';
+      }
+      if (todoCheckText === item.text && !todoCheckTextClass.contains('lineThrough')) {
+        item.status = 'pending';
+        todoCheckIcon.className = 'far fa-circle';
+      }
+    })
+  }
+}
 
 // FUNCTION DELETE A TO-DO
 const deleteToDo = (event) => {
@@ -141,14 +173,13 @@ const deleteToDo = (event) => {
     itemClicked.parentElement.remove();
 
     todoStore.forEach((item, index) => {
-      if (itemClickedText == item) {
+      if (itemClickedText == item.text) {
         todoStore.splice(index, 1)
       }
     })
   }
   // console.log(todoStore);
 };
-
 
 // REFRESH TO-DO LIST
 const clearAll = () => {
@@ -170,4 +201,5 @@ todoColors.addEventListener('click', selectColor);
 addItem.addEventListener('keyup', executeToDo);
 addButton.addEventListener('click', executeToDo);
 refreshButton.addEventListener('click', clearAll);
+list.addEventListener('click', todoCompleted);
 list.addEventListener('click', deleteToDo);
