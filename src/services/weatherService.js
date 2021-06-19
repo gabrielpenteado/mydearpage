@@ -6,8 +6,37 @@ require('dotenv').config();
 const todayURL = 'https://api.openweathermap.org/data/2.5/weather';
 const nextDaysURL = 'https://api.openweathermap.org/data/2.5/onecall';
 
-// MIDDLEWARE - GET WEATHER BY TYPING CUITY NAME
-async function getWeatherByCity (req, res, next) {
+// GET WEATHER ON LOAD
+const byCoords = async (req, res) => {
+  const coords = req.body;
+  coords.appid = process.env.weatherApiKey;
+  const coordsQueryString = qs.stringify(coords);
+  // console.log(`${todayURL}?lat=${coordsQueryString}&units=metric`);
+
+  try {
+    // TODAY WEATHER
+    const response1 = await axios(`${todayURL}?${coordsQueryString}&units=metric`);
+    const weatherData1 = await response1.data;
+    // NEXTDAYS WEATHER
+    const response2 = await axios(`${nextDaysURL}?${coordsQueryString}&exclude=current,minutely,hourly&units=metric`);
+    const weatherData2 = await response2.data;
+
+    const onloadData = {
+      today: weatherData1,
+      nextDays: weatherData2
+    };
+    //SEND DATA TO CLIENT
+    return onloadData;
+
+  } catch (err) {
+    return err.response.data;
+    // console.log(err.response.data);
+  }
+}
+
+
+// GET WEATHER BY TYPING CITY NAME
+const byCity = async (req, res) => {
   const cityName = req.body;
   // console.log(cityName);
   cityName.appid = process.env.weatherApiKey;
@@ -36,12 +65,15 @@ async function getWeatherByCity (req, res, next) {
       nextDays: weatherData2
     };
     // SEND DATA TO CLIENT
-    res.send(citynameData);
+    return citynameData;
 
   } catch (err) {
-    console.log(err.response.data);
-    res.json(err.response.data);
+    return err.response.data;
+    // console.log(err.response.data);
   }
 }
 
-module.exports = getWeatherByCity;
+module.exports = {
+  byCoords,
+  byCity
+};

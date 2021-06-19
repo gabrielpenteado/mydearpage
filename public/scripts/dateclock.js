@@ -50,5 +50,3 @@ setInterval(() => {
   initClock.textContent = dateClock().clock;
   initDate.textContent = dateClock().date;
 }, 1000);
-
-

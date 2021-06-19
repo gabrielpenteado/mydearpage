@@ -13,12 +13,18 @@ const alertButton = document.querySelector('.alertPopUp a');
 const alertIconToDo = document.querySelector('.fa-exclamation-circle');
 const freezePageToDo = document.querySelectorAll('.freezeWithAlert');
 
+// CREATE TODO VARIABLES
+let todoStore = [];
+let backgColor = 'transparent';
+let iconClassName = 'far fa-circle';
+let textLineThrough;
+
 // FUNCTION TO FREEZE BACKGROUND WITH ALERT POP-UP
 const freezePage1 = () => {
   freezePageToDo.forEach(item => {
     item.style.pointerEvents = 'none';
   })
-} 
+}
 // FUNCTION TO UNFREEZE BACKGROUND WITH ALERT POP-UP
 const unfreezePage1 = () => {
   freezePageToDo.forEach(item => {
@@ -70,21 +76,37 @@ const selectColor = (event) => {
 }
 
 // FUNCTION ADD TO-DO
-const addToDo = (text, backgColor) => {
+const addToDo = (text, backgColor, iconClassName, linethrough) => {
   const toDo = `
   <li class= "item" style="background-color:${backgColor};">
-    <i class="far fa-circle"></i>
-    <p class="textToDo">${text}</p>
+    <i class="${iconClassName}"></i>
+    <p class="textToDo ${linethrough}">${text}</p>
     <i class="far fa-trash-alt"></i>
   </li>`
 
   list.insertAdjacentHTML("beforeend", toDo);
 }
 
-// ADD TO-DO WITH ENTER KEY AND MOUSE CLICK AND SHOW TO-DO LIMIT ALERT
-const todoStore = [];
-let backgColor = 'transparent'
+//FUNCTION TO UPDATE TODO LOCAL STORAGE
+const updateLocalStorage = () => {
+  localStorage.setItem('ToDo', JSON.stringify(todoStore));
+};
 
+// GET TODOs (IF EXIST) FROM LOCAL STORAGE
+const data = localStorage.getItem('ToDo');
+if (data) {
+  todoStore = JSON.parse(data);
+} else {
+  todoStore = [];
+}
+// console.log(todoStore);
+
+// DISPLAY ITEMS FROM LOCAL STORAGE
+todoStore.forEach((item, index) => {
+  addToDo(item.text, item.backgColor, item.icon, item.linethrough);
+})
+
+// ADD TO-DO WITH ENTER KEY AND MOUSE CLICK AND SHOW TO-DO LIMIT ALERT
 const executeToDo = (event) => {
   if ((event.key === 'Enter' || event.type === 'click') && todoStore.length < 9) {
     // SET TODO COLOR
@@ -107,13 +129,19 @@ const executeToDo = (event) => {
 
     // CREATE TODO ITEM OBJECT
     const text = input.value;
+
     if (text) {
-      addToDo(text, backgColor);
+      addToDo(text, backgColor, iconClassName, textLineThrough);
       todoStore.push({
         text: text,
         backgColor: backgColor,
-        status: 'pending'
+        status: 'pending',
+        icon: 'far fa-circle',
+        linethrough: ''
       });
+      // UPDATE TODO LOCAL STORAGE
+      updateLocalStorage();
+
       // ANIMATION OF PLUS CIRCLE BUTTON
       addButton.style.animation = 'rotation 1s ease-out';
       setTimeout(() => {
@@ -154,12 +182,18 @@ const todoCompleted = (event) => {
       if (todoCheckText === item.text && todoCheckTextClass.contains('lineThrough')) {
         todoCheckIcon.className = 'fas fa-check-circle';
         item.status = 'completed';
+        item.icon = 'fas fa-check-circle';
+        item.linethrough = 'lineThrough';
       }
       if (todoCheckText === item.text && !todoCheckTextClass.contains('lineThrough')) {
-        item.status = 'pending';
         todoCheckIcon.className = 'far fa-circle';
+        item.status = 'pending';
+        item.icon = 'far fa-circle';
+        item.linethrough = '';
       }
     })
+    // UPDATE TODO LOCAL STORAGE
+    updateLocalStorage();
   }
 }
 
@@ -177,6 +211,8 @@ const deleteToDo = (event) => {
         todoStore.splice(index, 1)
       }
     })
+    // UPDATE TODO LOCAL STORAGE
+    updateLocalStorage();
   }
   // console.log(todoStore);
 };
@@ -186,12 +222,15 @@ const clearAll = () => {
   if (todoStore.length > 0) {
     todoStore.length = 0;
     list.innerHTML = '';
-    // console.log(todoStore);
 
     refreshButton.classList.add("fa-spin");
     setTimeout(() => {
       refreshButton.classList.remove("fa-spin");
     }, 1000);
+    // CLEAR LOCAL STORAGE
+  localStorage.clear();
+
+  // console.log(todoStore);
   }
 };
 

@@ -88,7 +88,7 @@ nav ul li i {
   font-size: 55px;
 }
 
-.fa-github {
+.githubHeader {
   content: url(/assets/heather-icons/github.svg);
   width: 68px;
   padding-top: 9px;

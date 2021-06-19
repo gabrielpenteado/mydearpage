@@ -40,7 +40,7 @@ body {
 /* GRID ITEMS */
 
 .grid-item {
-  background: url(/assets/background/background.jpg);
+  background-image: url(/assets/background/background1.jpg);
   background-size: cover;
   background-attachment: fixed;
 }

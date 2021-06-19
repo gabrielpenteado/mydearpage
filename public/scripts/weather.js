@@ -37,7 +37,7 @@ const freezePage2 = () => {
   freezePageWeather.forEach(item => {
     item.style.pointerEvents = 'none';
   })
-} 
+}
 // FUNCTION TO UNFREEZE BACKGROUND WITH ALERT POP-UP
 const unfreezePage2 = () => {
   freezePageWeather.forEach(item => {
@@ -49,7 +49,7 @@ const unfreezePage2 = () => {
 const animationIn = () => {
   todayIcon.style.animation = 'weatherAnimation 700ms ease-in';
   todayTemperature.style.animation = 'weatherAnimation 700ms ease-in';
-  nextDays.style.animation = 'weatherAnimation 700ms ease-in';  
+  nextDays.style.animation = 'weatherAnimation 700ms ease-in';
 }
 const animationOut = () => {
   todayIcon.style.animation = '';
@@ -98,8 +98,8 @@ const getTodayWeather = async (position) => {
 
     alertPopUp.style.display = 'flex';
     alertMessage.innerHTML = `<h1>${data.cod} - ${data.message}.
-       Please, type city name.</h1>`;
-    
+         Please, type city name.</h1>`;
+
     freezePage2();
     resetCity();
 
@@ -182,8 +182,8 @@ const getWeatherByCityName = async (event) => {
 
       alertPopUp.style.display = 'flex';
       alertMessage.innerHTML = `<h1>${data.cod} - ${data.message}.
-          Please, type city name again.</h1>`;
-      
+            Please, type city name again.</h1>`;
+
       freezePage2();
       resetCity();
 
