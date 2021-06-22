@@ -228,7 +228,7 @@ const clearAll = () => {
       refreshButton.classList.remove("fa-spin");
     }, 1000);
     // CLEAR LOCAL STORAGE
-  localStorage.clear();
+  localStorage.removeItem('ToDo');
 
   // console.log(todoStore);
   }

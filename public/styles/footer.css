@@ -28,7 +28,7 @@
   position: relative;
   top: 13px;
   background-color: azure;
-  padding: 10px;
+  padding: 8px;
   color: black;
   border-radius: 10px;
   font-size: 18px;
@@ -153,6 +153,10 @@ input:checked + .slider:before {
    overflow: hidden;
  }
 
+ .mycontacts .contactButton a {
+   text-decoration: none;
+ }
+
  .mycontacts .contactButton:nth-child(1):hover {
   border: 1px solid #1877f2;
  }
@@ -215,9 +219,15 @@ input:checked + .slider:before {
  }
  .mycontacts .contactButton:nth-child(3):hover span {
    color: white;
-   margin-left: 12px;
+   margin-left: 10px;
+   font-size: 16px;
+   bottom: 7px;
  }
 
  .mycontacts .contactButton:hover {
    width: 150px;
+ }
+
+ .mycontacts .contactButton:nth-child(3):hover {
+   width: 320px;
  }

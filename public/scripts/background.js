@@ -38,22 +38,18 @@ if (dailyStatus === 'true') {
 const weeklyStatus = localStorage.getItem('weeklystatus');
 if (weeklyStatus === 'true') {
   weeklySlide.checked = true;
-  const weekInLocalStorage = localStorage.getItem('week');
+  const weekInLocalStorage = localStorage.getItem('weekSaved');
   let countInLocalStorage = localStorage.getItem('count');
 
-  if (weekInLocalStorage == 0) {
+  if (weekInLocalStorage !== '1' && today == 0) {
     countInLocalStorage < 11 ? countInLocalStorage++ : countInLocalStorage = 1;
     backgroundImage.forEach(item => {
       item.style.backgroundImage = `url(/assets/background/background${countInLocalStorage}.jpg)`;
     });
     localStorage.setItem('count', countInLocalStorage);
-  }
-
-  if (today) {
-    localStorage.setItem('week', today);
-  } else {
-    const todayplus1 = today + 1;
-    localStorage.setItem('week', todayplus1);
+    localStorage.setItem('weekSaved', 1);
+  } else if (today) {
+    localStorage.setItem('weekSaved', today);
   }
 
 } else {
@@ -96,7 +92,7 @@ const changeDaily = () => {
   if (dailySlide.checked) {
     localStorage.setItem('daySaved', today);
     weeklySlide.checked = false;
-    localStorage.removeItem('week');
+    localStorage.removeItem('weekSaved');
     localStorage.removeItem('weeklystatus');
 
     if (count) {
@@ -119,10 +115,9 @@ const changeWeekly = () => {
     localStorage.removeItem('dailystatus');
 
     if (today) {
-      localStorage.setItem('week', today);
+      localStorage.setItem('weekSaved', today);     
     } else {
-      const todayplus1 = today + 1;
-      localStorage.setItem('week', todayplus1);
+      localStorage.setItem('weekSaved', 1);
     }
     
     if (count) {
@@ -133,7 +128,7 @@ const changeWeekly = () => {
     }
     
   } else {
-    localStorage.removeItem('week');
+    localStorage.removeItem('weekSaved');
   }
 };
 
