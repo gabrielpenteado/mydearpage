@@ -155,5 +155,71 @@
 
 
 
+/* MEDIA QUERIES */
+@media (max-width: 1366px) {
+
+  .local {
+    padding: 6px;
+    font-size: 32px;
+  }
+
+  .todayTemperature p {
+    font-size: 42px;
+  }
+
+  .todayTemperature h3 {
+    font-size: 14px;
+    margin-left: 0;
+  }
+
+  .nextDays {
+    position: relative;
+    bottom: 10px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+  
+}
+
+
+@media (max-width: 888px) {
+
+  .weather {
+    grid-template-rows: none;
+  }
+
+  .todayIcon img {
+    width: 170px;
+  }
+
+  .nextDays {
+    bottom: 20px;
+  }
+
+}
+
+
+@media (max-width: 565px) {
+
+  .local {
+    font-size: 28px;
+  }
+  
+  .nextDays {
+    padding: 0;
+    right: 1px;
+  }
+}
+
+@media (max-width: 375px) {
+  .nextDays {
+    transform: scaleX(0.9) scaleY(0.9);
+    right: 10px;
+  }
+}
+
+
+
+
 
 

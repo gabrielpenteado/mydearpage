@@ -12,6 +12,7 @@ header {
 nav {
   width: 100%;
 }
+
 nav ul {
   position: relative;
   display: flex;
@@ -354,3 +355,223 @@ nav ul li:nth-child(22) a:hover {
 nav ul li:nth-child(22) a:hover i {
   content: url(/assets/heather-icons/bing-hover.svg);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+@media (max-width: 1366px) {
+
+  nav ul li a {
+    width: 60px;
+    height: 60px;
+  }
+
+  nav ul li {
+    list-style: none;
+    font-size: 40px;
+  }
+
+  .fa-google {
+    font-size: 40px;
+  }
+
+  .gmail {
+    width: 48px;
+  }
+
+  .outlook {
+    width: 46px;
+  }
+  
+  .fa-whatsapp {
+    font-size: 46px;
+  }
+  
+  .fa-amazon {
+    font-size: 46px;
+  }
+  
+  .fa-facebook-f {
+    font-size: 46px;
+    padding-top: 10px;
+  }
+  
+  .fa-yahoo {
+    font-size: 46px;
+  }
+
+  .fa-wikipedia-w {
+    padding-top: 4px;
+  }
+  
+  .fa-telegram-plane {
+    font-size: 45px;
+    padding-right: 8px;
+  }
+  
+  .fa-reddit-alien {
+    font-size: 46px;
+  }
+  
+  .githubHeader {
+    width: 50px;
+    padding-top: 6px;
+  }
+  
+  .fa-instagram {
+    font-size: 46px;
+  }
+  
+  .fa-pinterest-p {
+    font-size: 48px;
+    padding-top: 8px;
+  }
+  
+  .aliexpress {
+    width: 38px;
+  }
+  
+  .fa-spotify {
+    font-size: 46px;
+  }
+  
+  .fa-stack-overflow {
+    font-size: 46px;
+  }
+  
+  .bing {
+    width: 45px;
+    padding-left: 4px;
+  } 
+
+  /* GOOGLE HOVER */
+  nav ul li:nth-child(1) a:hover i {
+    width: 46px;
+  }
+
+  /* TIKTOK HOVER */
+  nav ul li:nth-child(16) a:hover i {
+    width: 45px;
+  }
+
+  /* GITHUB HOVER */
+  nav ul li:nth-child(17) a:hover i {
+    width: 52px;
+  }
+
+  /* ALIEXPRESS HOVER */
+  nav ul li:nth-child(19) a:hover i {
+    width: 38px;
+  }
+
+  /* SPOTIFY HOVER */
+  nav ul li:nth-child(20) a:hover i {
+    width: 44px;
+  }
+}
+
+
+@media (max-width: 888px) {
+  nav ul {
+    width: 100vw;
+  }
+
+  nav ul li:nth-child(5),
+  nav ul li:nth-child(6),
+  nav ul li:nth-child(7),
+  nav ul li:nth-child(8),
+  nav ul li:nth-child(10),
+  nav ul li:nth-child(12),
+  nav ul li:nth-child(13),
+  nav ul li:nth-child(14),
+  nav ul li:nth-child(15),
+  nav ul li:nth-child(16),
+  nav ul li:nth-child(18),
+  nav ul li:nth-child(20),
+  nav ul li:nth-child(22) {
+    display: none;
+  }
+}
+
+
+@media (max-width: 565px) {
+  nav ul li:nth-child(3),
+  nav ul li:nth-child(11),
+  nav ul li:nth-child(17),
+  nav ul li:nth-child(21) {
+    display: none;
+  }
+
+  nav ul li a:hover {
+    transform: none;
+  }
+
+  nav ul li:nth-child(1) a:hover {
+    background-color: white;
+  }
+
+  nav ul li:nth-child(1) a i {
+    content: url(/assets/heather-icons/google.svg);
+    width: 50px;
+  }
+
+  nav ul li:nth-child(1) a:hover i {
+    content: url(/assets/heather-icons/google.svg);
+    width: 50px;
+  }
+
+  nav ul li:nth-child(2) a {
+    background-color: #1877f2;
+  }
+  
+  nav ul li:nth-child(2) a i {
+    color: #ffffff;
+  }
+  
+  nav ul li:nth-child(4) a {
+    background-color: #ff0000;
+  }
+  
+  nav ul li:nth-child(4) a i {
+    color: #ffffff;
+  }
+
+  nav ul li:nth-child(9) a {
+    background-color: #ff9900;
+  }
+  
+  nav ul li:nth-child(9) a i {
+    color: #000000;
+  }
+
+  nav ul li:nth-child(19) a:hover {
+    background-color: white;
+  }
+  
+  nav ul li:nth-child(19) a i {
+    content: url(/assets/heather-icons/aliexpress-hover.svg);
+    width: 40px;
+  }
+
+  nav ul li:nth-child(19) a:hover i {
+    content: url(/assets/heather-icons/aliexpress-hover.svg);
+    width: 40px;
+  }
+
+  nav ul {
+    justify-content: space-evenly;
+  }
+
+}
+

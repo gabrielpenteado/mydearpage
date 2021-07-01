@@ -75,3 +75,29 @@ footer {
   position: relative;
   grid-area: footer;
 }
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+@media (max-width: 888px) {
+
+  .container {
+    display: grid;
+    position: relative;
+    overflow: auto;
+    gap: 5px;
+    height: 100vh;
+    grid-template-areas: 
+    'header'
+    'aside'
+    'footer';
+    
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  
+}

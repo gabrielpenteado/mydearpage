@@ -1,3 +1,5 @@
+/* DEFAULT 1920 x 1080 */
+
 .to-do {
   display: flex;
   flex-direction: column;
@@ -46,7 +48,7 @@
   font-size: 22px;
   cursor: pointer;
   color: green;
-  background: radial-gradient(white 40%, transparent 70%)
+  background: radial-gradient(white 40%, transparent 70%);
 }
 
 .fa-trash-alt {
@@ -171,4 +173,63 @@
 
 .fa-sync-alt .fa-spin {
   font-size: 34px;
+}
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+@media (max-width: 1366px) {
+
+  .fa-plus-circle {
+    position: relative;
+    left: 2px;
+  }
+
+  .inputToDo {
+    width: 65%;
+    font-size: 16px;
+  }
+
+  .item .textToDo {
+    position: relative;
+    margin: auto;
+    margin-left: 1px;
+    margin-top: 2px;
+  }
+
+  .fa-sync-alt {
+    position: relative;
+    right: 4px;
+  }
+
+  .item {
+    padding: 6px 7px;
+  }
+
+  .fa-circle {
+    font-size: 20px;
+  }
+
+  .fa-trash-alt {
+    font-size: 19px;
+  }
+
+  .fa-check-circle {
+    font-size: 20px;
+  }
+  
+}
+
+
+@media (max-width: 888px) {
+
+  .to-do {
+    display: none;
+  }
+  
 }

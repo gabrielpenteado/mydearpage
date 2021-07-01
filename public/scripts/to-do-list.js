@@ -242,3 +242,11 @@ addButton.addEventListener('click', executeToDo);
 refreshButton.addEventListener('click', clearAll);
 list.addEventListener('click', todoCompleted);
 list.addEventListener('click', deleteToDo);
+
+
+// CHANGE INPUT MAXLENGTH WITH OTHERS SCREEN RESOLUTIONS
+const widthResolution = window.innerWidth;
+
+if (widthResolution <= 1366) {
+  input.setAttribute("maxlength", "77");
+}
