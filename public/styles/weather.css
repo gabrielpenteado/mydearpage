@@ -154,7 +154,6 @@
 
 
 
-
 /* MEDIA QUERIES */
 @media (max-width: 1366px) {
 
@@ -212,10 +211,12 @@
 }
 
 @media (max-width: 375px) {
+
   .nextDays {
     transform: scaleX(0.9) scaleY(0.9);
     right: 10px;
   }
+  
 }
 
 

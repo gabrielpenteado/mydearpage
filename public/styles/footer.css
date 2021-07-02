@@ -231,17 +231,6 @@ transform: scaleX(1.33) scaleY(1.33);
   bottom: 7px;
 }
 
-/* .mycontacts .contactButton:nth-child(1):hover {
-   width: 160px;
-}
-
-.mycontacts .contactButton:nth-child(2):hover {
-   width: 150px;
-}
-
-.mycontacts .contactButton:nth-child(3):hover {
-  width: 280px;
-} */
 
 
 
@@ -300,6 +289,7 @@ transform: scaleX(1.33) scaleY(1.33);
   }
 
 }
+
 
 @media (max-width: 565px) {
 
