@@ -5,18 +5,16 @@
 <h2 align="center">
   A personalized start webpage 
 </h2>
-<br>
 
 <div align="center">
   <a href="https://github.com/gabrielpenteado/mydearpage/blob/main/LICENSE.md">
     <img src="https://img.shields.io/github/license/gabrielpenteado/mydearpage?color=informational&style=flat-square" alt="license"/>
   </a>
 
-  <img src="https://img.shields.io/static/v1?label=npm&message=v6.14.11&color=informational&style=flat-square" alt="">
+  <img src="https://img.shields.io/static/v1?label=npm&message=v6.14.11&color=informational&style=flat-square" alt="npm version">
 
   <img src="https://img.shields.io/website?down_color=red&down_message=offline&style=flat-square&up_color=008000&up_message=online&url=https%3A%2F%2Fmydearpage.herokuapp.com" alt="website status">
 </div>
-<br>
 
 ## 📑 Contents 
 - [About the project](#-about-the-project)
@@ -56,11 +54,9 @@
 *The demonstration video will be ready soon.*
 
 ### 🔗 Website
-You can access the project website with all features by clicking below : 
+You can access the project website with all features by clicking below:
 
-<a href="https://mydearpage.herokuapp.com" target="_blank">
-  <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" alt="heroku" />
-</a>
+[![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)](https://mydearpage.herokuapp.com)
 <br>
 <br>
 
@@ -86,27 +82,25 @@ To start using <strong>MyDearPage</strong> follow the instructions below.
 1. Clone the repository<br>
 `git clone https://github.com/gabrielpenteado/mydearpage.git`
 
-2. Install npm packages
+2. Access the project folder in the terminal
 
-3. Access the project folder in the terminal
-
-4. Install npm packages<br> 
+3. Install npm packages<br> 
 `npm install`
 
-5. Enter your API key in `.env_sample` and rename it to `.env`<br>
+4. Enter your API key in `.env_sample` and rename it to `.env`<br>
 `weatherApiKey=`YOUR_WEATHER_API_HERE
 <br>
 
 ## 🌌 Features
-<h3 align="center">
+<h4 align="center">
  <a href="#-custom-icons">Custom icons</a> •
  <a href="#-to-do-list">To-do list</a> • 
  <a href="#-weather-app">Weather app</a> • 
- <a href="#-wallpaper-change">Wallpaper changer</a> • 
+ <a href="#-wallpaper-changer">Wallpaper changer</a> • 
  <a href="#-digital-clock">Digital clock</a> • 
  <a href="#-alerts">Alerts</a> •
  <a href="#-about-me">About me</a>
-</h3>
+</h4>
 
 ### ⭐ Custom icons
 ![Custom icons](https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/gifs/icons.gif)
@@ -119,8 +113,8 @@ To start using <strong>MyDearPage</strong> follow the instructions below.
 ![Weather app](https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/gifs/weather.gif)<br>
 *Note: The animated weather icons are attributed to* [amCharts](https://www.amcharts.com/free-animated-svg-weather-icons/).
 
-### ⭐ Wallpaper change
-![Wallpaper change](https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/gifs/background.gif)
+### ⭐ Wallpaper changer
+![Wallpaper changer](https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/gifs/background.gif)
 
 ### ⭐ Digital clock
 ![Digital clock](https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/gifs/digital-clock.gif)
@@ -137,22 +131,13 @@ To start using <strong>MyDearPage</strong> follow the instructions below.
 MyDearPage automatically adjust for different screen sizes ensuring a pleasant user experience for all devices.
 
 ## 🤝 Contributions
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)<br>
 The foundation of the open source community are the contributions, them inspire us to learn and create. Any contributions are greatly appreciated.
 
 ## 📄 License
 This project is licensed under the MIT License. See the [LICENSE.md](https://github.com/gabrielpenteado/mydearpage/blob/main/LICENSE.md) file for details.
 
 ## 🙋‍♂️ Contact me
-<a href="https://www.linkedin.com/in/gabriel-penteado" target="_blank">
-  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white&link=https://gmail.com" target />
-</a>
-
-<a href="https://github.com/gabrielpenteado" target="_blank">
-  <img src="https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white" target />
-</a>
-
-<a href="mailto:gabripenteado@gmail.com" target="_blank">
-  <img src="https://img.shields.io/badge/gabripenteado@gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white" target />
-</a>
-
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gabriel-penteado)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/gabrielpenteado)
+[![Gmail](https://img.shields.io/badge/gabripenteado@gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:gabripenteado@gmail.com)
