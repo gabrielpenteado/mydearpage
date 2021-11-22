@@ -19,10 +19,10 @@
 ## 📑 Contents 
 - [About the project](#-about-the-project)
   - [Built with](#-built-with)
-  - [Demonstration video](#-demo-video)
+  - [Demonstration video](#-demonstration-video)
   - [Website](#-website)
 - [Getting Started](#-getting-started)
-  - [Requirements](#-requeriments)
+  - [Requirements](#-requirements)
   - [Installation](#-installation)
 - [Features](#-features)
   - [Custom icons](#-custom-icons)
@@ -89,6 +89,11 @@ To start using <strong>MyDearPage</strong> follow the instructions below.
 
 4. Enter your API key in `.env_sample` and rename it to `.env`<br>
 `weatherApiKey=`YOUR_WEATHER_API_HERE
+
+5. Start using<br>
+`npm start`
+
+6. Access `http://localhost:8000` in your browser 
 <br>
 
 ## 🌌 Features
