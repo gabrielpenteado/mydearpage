@@ -1,7 +1,7 @@
 const path = require('path');
 
 function indexRender (req, res) {
-  res.render(path.join(__dirname, '../views/index.ejs'));
+  res.render(path.join(__dirname, '../views/pages/index.ejs'));
 };
 
 

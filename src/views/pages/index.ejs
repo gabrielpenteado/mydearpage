@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs') %>
+  
+<body>
+  <div class="container">
+    <!-- HEADER - ICONS -->
+    <%- include('../partials/header.ejs') %>
+    <!-- SECTION -->
+    <%- include('../partials/section.ejs') %>
+    <!-- ASIDE - WEATHER -->
+    <%- include('../partials/aside.ejs') %>
+    <!-- FOOTER -->
+    <%- include('../partials/footer.ejs') %>
+    <!-- ALERT POP UP / HIDE IN DIV.CONTAINER -->
+    <div class="alertPopUp">
+      <i class="fas fa-exclamation-circle"></i>
+      <span></span>
+      <a>Close</a>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="/scripts/dateclock.js"></script>
+  <script type="text/javascript" src="/scripts/background.js"></script>
+  <script type="text/javascript" src="/scripts/weather.js"></script>
+  <script type="text/javascript" src="/scripts/to-do-list.js"></script>
+
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXBCNGZ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+</body>
+  
+</html>
