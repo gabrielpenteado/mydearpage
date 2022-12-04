@@ -56,7 +56,7 @@
 ### 🔗 Website
 You can access the project website with all features by clicking below:
 
-[![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)](https://mydearpage.herokuapp.com)
+[![Website shields.io](https://img.shields.io/website?down_color=red&down_message=DOWN&style=for-the-badge&up_color=green&up_message=UP&url=https%3A%2F%2Fmydearpage.cyclic.app)](https://mydearpage.cyclic.app)
 <br>
 <br>
 
