@@ -13,7 +13,7 @@
 
   <img src="https://img.shields.io/static/v1?label=npm&message=v6.14.11&color=informational&style=flat-square" alt="npm version">
 
-  <img src="https://img.shields.io/website?down_color=red&down_message=offline&style=flat-square&up_color=008000&up_message=online&url=https%3A%2F%2Fmydearpage.herokuapp.com" alt="website status">
+  <img src="https://img.shields.io/website?down_color=red&down_message=offline&style=flat-square&up_color=008000&up_message=online&url=https%3A%2F%2Fmydearpage.cyclic.app" alt="website status">
 </div>
 
 ## 📑 Contents 
