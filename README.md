@@ -130,6 +130,7 @@ To start using <strong>MyDearPage</strong> follow the instructions below.
 ### Responsive web design
 MyDearPage automatically adjust for different screen sizes ensuring a pleasant user experience for all devices.
 <br>
+<br>
 
 ## 🤝 Contributions
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)<br>
@@ -137,7 +138,8 @@ The foundation of the open source community are the contributions, them inspire 
 
 ## 📄 License
 This project is licensed under the MIT License. See the [LICENSE.md](https://github.com/gabrielpenteado/mydearpage/blob/main/LICENSE.md) file for details.
-<br />
+<br>
+<br>
 
 <div align="center">
   <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/u/63300269?v=4&h=100&w=100&fit=cover&mask=circle&maxage=7d" />
