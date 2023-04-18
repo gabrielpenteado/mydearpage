@@ -18,24 +18,22 @@
 
 ## 📑 Contents 
 - [About the project](#-about-the-project)
-  - [Built with](#-built-with)
-  - [Demonstration video](#-demonstration-video)
-  - [Website](#-website)
+  - Built with
+  - Website
 - [Getting Started](#-getting-started)
-  - [Requirements](#-requirements)
-  - [Installation](#-installation)
+  - Requirements
+  - Installation
 - [Features](#-features)
-  - [Custom icons](#-custom-icons)
-  - [To-do list](#-to-do-list)
-  - [Weather app](#-weather-app)
-  - [Wallpaper changer](#-wallpaper-changer)
-  - [Digital clock](#-digital-clock)
-  - [Alerts](#-alerts)
-  - [About me](#-about-me)
-  - [Responsive web design](#-responsive-web-design)
+  - Custom icons
+  - To-do list
+  - Weather app
+  - Wallpaper changer
+  - Digital clock
+  - Alerts
+  - About me
+  - Responsive web design
 - [Contributions](#-contributions)
 - [License](#-license)
-- [Contact me](#-contact-me)
 <br>
 
 ## 💡 About the project
@@ -94,15 +92,6 @@ To start using <strong>MyDearPage</strong> follow the instructions below.
 <br>
 
 ## ⚡ Features
-<h4 align="center">
- <a href="#-custom-icons">Custom icons</a> •
- <a href="#-to-do-list">To-do list</a> • 
- <a href="#-weather-app">Weather app</a> • 
- <a href="#-wallpaper-changer">Wallpaper changer</a> • 
- <a href="#-digital-clock">Digital clock</a> • 
- <a href="#-alerts">Alerts</a> •
- <a href="#-about-me">About me</a>
-</h4>
 
 ### Custom icons
 ![Custom icons](https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/gifs/icons.gif)
