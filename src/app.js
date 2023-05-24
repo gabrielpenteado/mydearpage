@@ -10,7 +10,7 @@ app.use(express.static('public'));
 // SET VIEW ENGINE
 app.set('view engine', 'ejs');
 // PARSE INCOMING DATA AS JSON
-app.use(express.json({limit: '1mb'}));
+app.use(express.json({ limit: '1mb' }));
 
 // ROUTES
 app.use('/', routes);
