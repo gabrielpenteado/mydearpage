@@ -13,7 +13,7 @@
 
   <img src="https://img.shields.io/static/v1?label=npm&message=v6.14.11&color=informational&style=flat-square" alt="npm version">
 
-  <img src="https://img.shields.io/website?down_color=red&down_message=offline&style=flat-square&up_color=008000&up_message=online&url=https%3A%2F%2Fmydearpage.cyclic.app" alt="website status">
+  <img src="https://img.shields.io/website?down_color=red&down_message=offline&style=flat-square&up_color=008000&up_message=online&url=https%3A%2F%2Fmydearpage.onrender.com" alt="website status">
 </div>
 
 ## 📑 Contents 
@@ -51,7 +51,7 @@
 ### Website 
 You can access the project website with all features by clicking below:
 
-[![Website shields.io](https://img.shields.io/website?down_color=red&down_message=DOWN&style=for-the-badge&up_color=green&up_message=UP&url=https%3A%2F%2Fmydearpage.cyclic.app)](https://mydearpage.cyclic.app)
+[![Website shields.io](https://img.shields.io/website?down_color=red&down_message=OFF&style=for-the-badge&up_color=green&up_message=ON&url=https%3A%2F%2Fmydearpage.onrender.com)](https://mydearpage.onrender.com)
 <br>
 <br>
 
