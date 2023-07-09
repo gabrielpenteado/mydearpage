@@ -8,7 +8,7 @@
 
 <div align="center">
   <a href="https://github.com/gabrielpenteado/mydearpage/blob/main/LICENSE.md">
-    <img src="https://img.shields.io/github/license/gabrielpenteado/mydearpage?color=informational&style=flat-square" alt="license"/>
+    <img src="https://img.shields.io/github/license/gabrielpenteado/mydearpage?color=informational" alt="license"/>
   </a>
 
   <img src="https://img.shields.io/static/v1?label=npm&message=v6.14.11&color=informational&style=flat-square" alt="npm version">
@@ -41,6 +41,35 @@
   <strong>MyDearPage</strong> is a personalized start webpage to kickstart your web browsing with <em>CUSTOM ICONS</em> for the main websites, a multiple colors <em>TO-DO LIST</em>, the <em>WEATHER APP</em> with daily forecast, <em>DIGITAL CLOCK</em> and a <em>WALLPAPER CHANGE</em> feature. It has a unique <em>ALERT SYSTEM</em> and <em>RESPONSIVE WEB DESIGN</em>.
 </p>
 
+<div align="center">
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: center">
+          Video
+        </th>
+        <th style="text-align: center">
+          Website
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <a href="https://www.youtube.com/watch?v=HPRoGpF1nsM" target="_blank">
+            <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
+          </a>
+        </td>  
+        <td>
+          <a href="https://mydearpage.netlify.app" target="_blank">
+            <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" />
+          </a>
+        </td>  
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 ### Built with
 ![html](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![css](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -48,13 +77,12 @@
 ![nodejs](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 
-### Website 
-You can access the project website with all features by clicking below:
+<!-- ### Website 
+You can access the project website with all features by clicking below: -->
 
 <!-- [![Website shields.io](https://img.shields.io/website?down_color=red&down_message=OFF&style=for-the-badge&up_color=green&up_message=ON&url=https%3A%2F%2Fmydearpage.onrender.com)](https://mydearpage.onrender.com) -->
 
-[![netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://mydearpage.netlify.app/)
-<br>
+<!-- [![netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://mydearpage.netlify.app/) -->
 <br>
 
 ## 💥 Getting started
