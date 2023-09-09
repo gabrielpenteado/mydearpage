@@ -16,7 +16,8 @@
   <img src="https://img.shields.io/website?down_color=red&down_message=offline&style=flat-square&up_color=008000&up_message=online&url=https%3A%2F%2Fmydearpage.netlify.app" alt="website status">
 </div>
 
-## 📑 Contents 
+## 📑 Contents
+
 - [About the project](#-about-the-project)
   - Built with
   - Website
@@ -34,9 +35,10 @@
   - Responsive web design
 - [Contributions](#-contributions)
 - [License](#-license)
-<br>
+  <br>
 
 ## 💡 About the project
+
 <p align="justify"> 
   <strong>MyDearPage</strong> is a personalized start webpage to kickstart your web browsing with <em>CUSTOM ICONS</em> for the main websites, a multiple colors <em>TO-DO LIST</em>, the <em>WEATHER APP</em> with daily forecast, <em>DIGITAL CLOCK</em> and a <em>WALLPAPER CHANGE</em> feature. It has a unique <em>ALERT SYSTEM</em> and <em>RESPONSIVE WEB DESIGN</em>.
 </p>
@@ -70,14 +72,19 @@
   </table>
 </div>
 
+<p align="center">
+    <img src="https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/screenshots/screenshot.jpg"> 
+</p>
+
 ### Built with
+
 ![html](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![css](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![javascript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![nodejs](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 
-<!-- ### Website 
+<!-- ### Website
 You can access the project website with all features by clicking below: -->
 
 <!-- [![Website shields.io](https://img.shields.io/website?down_color=red&down_message=OFF&style=for-the-badge&up_color=green&up_message=ON&url=https%3A%2F%2Fmydearpage.onrender.com)](https://mydearpage.onrender.com) -->
@@ -86,76 +93,90 @@ You can access the project website with all features by clicking below: -->
 <br>
 
 ## 💥 Getting started
+
 To start using <strong>MyDearPage</strong> follow the instructions below.
 
 ### Requirements
+
 - npm (v6.14.11)
 - node.js (v14.16.0)
-> [Click here](https://nodejs.org/en/download/) to install.
+
+  > [Click here](https://nodejs.org/en/download/) to install.
 
 - weather API key
-> [Click here](https://openweathermap.org/api) and select **One Call API**.
+  > [Click here](https://openweathermap.org/api) and select **One Call API**.
 
 ### Browser Support
-[<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png" alt="Chrome" />](https://www.google.com/intl/en/chrome/)<br> Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/edge/edge_24x24.png" alt="Edge" />](https://www.microsoft.com/en-us/edge)<br> Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/firefox/firefox_24x24.png" alt="Firefox" />](https://www.mozilla.org/en-US/firefox/new/)<br> Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/safari/safari_24x24.png" alt="Safari" />](https://www.apple.com/br/safari/)<br> Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/opera/opera_24x24.png" alt="Opera" />](https://www.opera.com)<br> Opera 
-|:------------:|:------------:|:-----------: |:------------:|:------------:|
-|      ✅      |      ✅      |     ✅      |      ✅      |      ✅      |
-| last version | last version | last version | last version | last version |
 
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png" alt="Chrome" />](https://www.google.com/intl/en/chrome/)<br> Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/edge/edge_24x24.png" alt="Edge" />](https://www.microsoft.com/en-us/edge)<br> Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/firefox/firefox_24x24.png" alt="Firefox" />](https://www.mozilla.org/en-US/firefox/new/)<br> Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/safari/safari_24x24.png" alt="Safari" />](https://www.apple.com/br/safari/)<br> Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/opera/opera_24x24.png" alt="Opera" />](https://www.opera.com)<br> Opera |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                                                   ✅                                                                                   |                                                                              ✅                                                                              |                                                                                       ✅                                                                                       |                                                                                ✅                                                                                |                                                                        ✅                                                                         |
+|                                                                              last version                                                                              |                                                                         last version                                                                         |                                                                                  last version                                                                                  |                                                                           last version                                                                           |                                                                   last version                                                                    |
 
 ### Installation
+
 1. Clone the repository<br>
-`git clone https://github.com/gabrielpenteado/mydearpage.git`
+   `git clone https://github.com/gabrielpenteado/mydearpage.git`
 
 2. Access the project folder in the terminal
 
-3. Install npm packages<br> 
-`npm install`
+3. Install npm packages<br>
+   `npm install`
 
 4. Enter your API key in `.env_sample` and rename it to `.env`<br>
-`weatherApiKey=`YOUR_WEATHER_API_HERE
+   `weatherApiKey=`YOUR_WEATHER_API_HERE
 
 5. Start using<br>
-`npm start`
+   `npm start`
 
-6. Access `http://localhost:8000` in your browser 
-<br>
+6. Access `http://localhost:8000` in your browser
+   <br>
 
 ## ⚡ Features
 
 ### Custom icons
+
 ![Custom icons](https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/gifs/icons.gif)
 
 ### To-do list
+
 ![To-do list](https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/gifs/todo.gif)<br>
-*Note: The to-do list doesn't disappear after refreshing the page or after closing the tab. It will disappear only if you clear data of your browser.*
+_Note: The to-do list doesn't disappear after refreshing the page or after closing the tab. It will disappear only if you clear data of your browser._
 
 ### Weather app
+
 ![Weather app](https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/gifs/weather.gif)<br>
-*Note: The animated weather icons are attributed to* [amCharts](https://www.amcharts.com/free-animated-svg-weather-icons/).
+_Note: The animated weather icons are attributed to_ [amCharts](https://www.amcharts.com/free-animated-svg-weather-icons/).
 
 ### Wallpaper changer
+
 ![Wallpaper changer](https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/gifs/background.gif)
 
 ### Digital clock
+
 ![Digital clock](https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/gifs/digital-clock.gif)
 
 ### Alerts
+
 ![Alerts](https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/gifs/alerts.gif)
 
 ### About me
+
 ![About me](https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/gifs/about-me.gif)
 
 ### Responsive web design
+
 MyDearPage automatically adjust for different screen sizes ensuring a pleasant user experience for all devices.
 <br>
 <br>
 
 ## 🤝 Contributions
+
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)<br>
 The foundation of the open source community are the contributions, them inspire us to learn and create. Any contributions are greatly appreciated.
 
 ## 📄 License
+
 This project is licensed under the MIT License. See the [LICENSE.md](https://github.com/gabrielpenteado/mydearpage/blob/main/LICENSE.md) file for details.
 <br>
 <br>
@@ -167,10 +188,10 @@ This project is licensed under the MIT License. See the [LICENSE.md](https://git
   <br/>
   <br/>
 
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gabriel-penteado)
-  [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/gabrielpenteado)
-  [![Gmail](https://img.shields.io/badge/gabripenteado@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:gabripenteado@gmail.com)
-  <br />
-  <br />
-</div>
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gabriel-penteado)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/gabrielpenteado)
+[![Gmail](https://img.shields.io/badge/gabripenteado@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:gabripenteado@gmail.com)
+<br />
+<br />
 
+</div>
