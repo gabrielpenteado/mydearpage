@@ -31,7 +31,6 @@
   - Wallpaper changer
   - Digital clock
   - Alerts
-  - About me
   - Responsive web design
 - [Contributions](#-contributions)
 - [License](#-license)
@@ -73,7 +72,7 @@
 </div>
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/screenshots/screenshot.jpg"> 
+    <img src="https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/screenshots/mydearpage.png"> 
 </p>
 
 ### Built with
@@ -90,7 +89,6 @@ You can access the project website with all features by clicking below: -->
 <!-- [![Website shields.io](https://img.shields.io/website?down_color=red&down_message=OFF&style=for-the-badge&up_color=green&up_message=ON&url=https%3A%2F%2Fmydearpage.onrender.com)](https://mydearpage.onrender.com) -->
 
 <!-- [![netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://mydearpage.netlify.app/) -->
-<br>
 
 ## 💥 Getting started
 
@@ -134,41 +132,29 @@ To start using <strong>MyDearPage</strong> follow the instructions below.
 
 ## ⚡ Features
 
-### Custom icons
+### ◾ Custom icons
+<p>Shortcut icons for the most visited sites on the web.</p>
 
-![Custom icons](https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/gifs/icons.gif)
-
-### To-do list
-
-![To-do list](https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/gifs/todo.gif)<br>
+### ◾ To-do list
+<p>With option to select the background color of each to-do.</p>
 _Note: The to-do list doesn't disappear after refreshing the page or after closing the tab. It will disappear only if you clear data of your browser._
 
-### Weather app
+### ◾ Weather app
+<p>Weather forecast using browser geolocation or by typing the name of the city.</p>
 
-![Weather app](https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/gifs/weather.gif)<br>
 _Note: The animated weather icons are attributed to_ [amCharts](https://www.amcharts.com/free-animated-svg-weather-icons/).
 
-### Wallpaper changer
+### ◾ Wallpaper changer
+<p>The wallpaper can be changed manually or automatically (daily or weekly).</p>
 
-![Wallpaper changer](https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/gifs/background.gif)
+### ◾ Digital clock
+<p>A digital clock with date.</p>
 
-### Digital clock
+### ◾ Alerts
+<p>A personalized alert system with warnings about to-do limits and errors in the weather forecast app.</p>
 
-![Digital clock](https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/gifs/digital-clock.gif)
-
-### Alerts
-
-![Alerts](https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/gifs/alerts.gif)
-
-### About me
-
-![About me](https://raw.githubusercontent.com/gabrielpenteado/mydearpage/main/public/assets/gifs/about-me.gif)
-
-### Responsive web design
-
-MyDearPage automatically adjust for different screen sizes ensuring a pleasant user experience for all devices.
-<br>
-<br>
+### ◾ Responsive web design
+<p>MyDearPage automatically adjust for different screen sizes ensuring a pleasant user experience for all devices.</p>
 
 ## 🤝 Contributions
 
