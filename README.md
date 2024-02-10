@@ -7,13 +7,19 @@
 </h2>
 
 <div align="center">
+
+<!-- [![License](https://img.shields.io/github/license/gabrielpenteado/mydearpage?color=informational&style=flat-square)](https://github.com/gabrielpenteado/mydearpage/blob/main/LICENSE.md)
+![npm-version](https://img.shields.io/static/v1?label=npm&message=v6.14.11&color=informational&style=flat-square)
+![website-status](https://img.shields.io/website?down_color=red&down_message=offline&style=flat-square&up_color=008000&up_message=online&url=https%3A%2F%2Fmydearpage.netlify.app) -->
+
   <a href="https://github.com/gabrielpenteado/mydearpage/blob/main/LICENSE.md">
-    <img src="https://img.shields.io/github/license/gabrielpenteado/mydearpage?color=informational" alt="license"/>
+    <img src="https://img.shields.io/github/license/gabrielpenteado/mydearpage?color=informational&style=flat-square" alt="license"/>
   </a>
 
   <img src="https://img.shields.io/static/v1?label=npm&message=v6.14.11&color=informational&style=flat-square" alt="npm version">
 
   <img src="https://img.shields.io/website?down_color=red&down_message=offline&style=flat-square&up_color=008000&up_message=online&url=https%3A%2F%2Fmydearpage.netlify.app" alt="website status">
+
 </div>
 
 ## 📑 Contents
@@ -133,30 +139,36 @@ To start using <strong>MyDearPage</strong> follow the instructions below.
 ## ⚡ Features
 
 ### ◾ Custom icons
+
 <p>Shortcut icons for the most visited sites on the web.</p>
 
 ### ◾ To-do list
+
 <p>With option to select the background color of each to-do.</p>
 
 _Note: The to-do list doesn't disappear after refreshing the page or after closing the tab. It will disappear only if you clear data of your browser._
 
 ### ◾ Weather app
+
 <p>Weather forecast using browser geolocation or by typing the name of the city.</p>
 
 _Note: The animated weather icons are attributed to_ [amCharts](https://www.amcharts.com/free-animated-svg-weather-icons/).
 
 ### ◾ Wallpaper changer
+
 <p>The wallpaper can be changed manually or automatically (daily or weekly).</p>
 
 ### ◾ Digital clock
+
 <p>A digital clock with date.</p>
 
 ### ◾ Alerts
+
 <p>A personalized alert system with warnings about to-do limits and errors in the weather forecast app.</p>
 
 ### ◾ Responsive web design
-<p>MyDearPage automatically adjust for different screen sizes ensuring a pleasant user experience for all devices.</p>
 
+<p>MyDearPage automatically adjust for different screen sizes ensuring a pleasant user experience for all devices.</p>
 
 ## 🤝 Contributions
 
