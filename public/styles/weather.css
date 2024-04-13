@@ -152,6 +152,10 @@
     font-size: 30px;
   }
 
+  .todayIcon img {
+    width: 150px;
+  }
+
   .todayTemperature p {
     font-size: 34px;
   }
