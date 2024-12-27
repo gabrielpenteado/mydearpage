@@ -108,7 +108,11 @@ To start using <strong>MyDearPage</strong> follow the instructions below.
   > [Click here](https://nodejs.org/en/download/) to install.
 
 - weather API key
+
   > [Click here](https://openweathermap.org/api) and select **One Call API**.
+
+- the website demonstration is built using the Open-Meteo Free API, and the code to use this API is available on the 'openmeteo' branch.
+  > [Click here](https://open-meteo.com/) and get the **Weather Forecast API**.
 
 ### Browser Support
 
