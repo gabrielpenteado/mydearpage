@@ -42,9 +42,16 @@ const byCoords = async (req, res) => {
                 weatherCode: current.variables(2).value(),
             },
             daily: {
-                time: range(Number(daily.time()), Number(daily.timeEnd()), daily.interval()).map(
-                    (t) => new Date((t) * 1000)
-                ),
+                time: range(Number(daily.time()), Number(daily.timeEnd()), daily.interval())
+                    .map(
+                        (t) => new Date(t * 1000))
+                    .filter((date) => {
+                        const today = new Date();
+                        today.setHours(0, 0, 0, 0);  // Zera a hora para comparar apenas a data
+                        return date.getUTCFullYear() !== today.getUTCFullYear() ||
+                            date.getUTCMonth() !== today.getUTCMonth() ||
+                            date.getUTCDate() !== today.getUTCDate();
+                    }),
                 weatherCode: Object.values(daily.variables(0).valuesArray()),
                 temperature2mMax: Object.values(daily.variables(1).valuesArray()),
                 temperature2mMin: Object.values(daily.variables(2).valuesArray()),
@@ -68,7 +75,7 @@ const byCoords = async (req, res) => {
 
         for (let i = 0; i < weatherData.daily.time.length; i++) {
             console.log(
-                weatherData.daily.time[i],
+                weatherData.daily.time[i].getUTCDay(),
                 weatherData.daily.weatherCode[i],
                 weatherData.daily.temperature2mMax[i],
                 weatherData.daily.temperature2mMin[i]
@@ -132,14 +139,24 @@ const byCity = async (req, res) => {
                 weatherCode: current.variables(2).value(),
             },
             daily: {
-                time: range(Number(daily.time()), Number(daily.timeEnd()), daily.interval()).map(
-                    (t) => new Date(t * 1000)),
+                time: range(Number(daily.time()), Number(daily.timeEnd()), daily.interval())
+                    .map(
+                        (t) => new Date(t * 1000))
+                    .filter((date) => {
+                        const today = new Date();
+                        today.setHours(0, 0, 0, 0);  // Zera a hora para comparar apenas a data
+                        return date.getUTCFullYear() !== today.getUTCFullYear() ||
+                            date.getUTCMonth() !== today.getUTCMonth() ||
+                            date.getUTCDate() !== today.getUTCDate();
+                    }),
                 weatherCode: daily.variables(0).valuesArray(),
                 temperature2mMax: daily.variables(1).valuesArray(),
                 temperature2mMin: daily.variables(2).valuesArray(),
             },
 
         };
+
+        console.log(weatherData.daily.time);
 
         const dailyWeather = weatherData.daily.time.map((time, index) => ({
             time: time, // Hora do dia (convertido para Date)
